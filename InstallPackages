@@ -5,19 +5,19 @@
 #-------------------------------------------------------------------------
 
 echo
-echo "Refreshing Repo's"
+echo "Refreshing Repo Information"
 echo
 
 sudo pacman -Syu --noconfirm
-
-#-------------------------------------------------------------------------
 
 echo
 echo "Done!"
 echo
 
+#-------------------------------------------------------------------------
+
 echo
-echo "Add Missing Stuff For Niri"
+echo "Installing Core Components From The Main Repo"
 echo
 
 PKGS=(
@@ -25,6 +25,7 @@ PKGS=(
         'gnome-keyring'
         'wlr-randr'
         'cava'
+        'flatpak'
 )
 
 for PKG in "${PKGS[@]}"; do
@@ -39,7 +40,7 @@ echo
 #-------------------------------------------------------------------------
 
 echo
-echo "Install Theme Support"
+echo "Theming Packages From The Main Repo"
 echo
 
 pacman -S --noconfirm \
@@ -63,7 +64,7 @@ echo
 #-------------------------------------------------------------------------
 
 echo
-echo "Install Core App's. GTK Core Cause Niri Loves It and I'm Lazy"
+echo "Installing Core Applications From The Main Repo"
 echo
 
 PKGS=(
@@ -73,6 +74,8 @@ PKGS=(
         'showtime'
         'papers'
         'gnome-text-editor'
+        'lact'
+        'gpu-screen-recorder-gtk'
 )
 
 for PKG in "${PKGS[@]}"; do
@@ -87,19 +90,11 @@ echo
 #-------------------------------------------------------------------------
 
 echo
-echo "Install Misc System App's"
+echo "Installing Packages From The AUR. Skull Emoji"
 echo
 
-PKGS=(
-        'lact'
-        'flatpak'
-        'gpu-screen-recorder-gtk'
-)
-
-for PKG in "${PKGS[@]}"; do
-    echo "INSTALLING: ${PKG}"
-    sudo pacman -S "$PKG" --noconfirm
-done
+paru -S --noconfirm qt6ct-kde
+paru -S --noconfirm bazaar
 
 echo
 echo "Done!"
