@@ -5,6 +5,11 @@ ADDING THIS CAUSE INCASE I HIT MY HEAD, AND FORGET HOW TO DO STUFF
 > [!TIP]
 > Install Using Cachy Minimal or Arch Minimal (No Desktop Option)
 
+## Screenshots
+
+![KitKat's Desktop](assets/kitkat-desktop.png)
+*KitKat's running with Niri and Dank Material Shell*
+
 ## Step 1: Install Dank Shell Using That Beautiful TTY:
 
 [Dank Shell Installation Guide](https://danklinux.com/docs/getting-started)
