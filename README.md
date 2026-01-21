@@ -24,7 +24,7 @@ REBOOT YOUR PC AFTER FOLLOWING THESE 2 STEPS.
 > [!TIP]
 > Install Gaming Packages In The Cachy Hello App If You Are Using CachyOS, This App Will Open After Your First Login.
 
-## Step 3: Install Recommended Packages To Make Your Desktop Experience Less Painful:
+## Step 3: Install Recommended Packages, Setup Default Apps, And Install ScopeBuddy For GameScope:
 
 **Core Components:**
 - xdg-desktop-portal-gnome
@@ -49,27 +49,17 @@ REBOOT YOUR PC AFTER FOLLOWING THESE 2 STEPS.
 - nwg-look
 - qt6ct-kde
 
+**Other:**
+- Installs mimeapps.list to .config To Setup Defaulty Applications
+- ScopeBuddy To Assist GameScope For Simplicity
+
 Run The Installer.
 
 ```shell
 curl -fsSL https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/cachyos/InstallPackages | sh
 ```
 
-## Step 4: Setup File Extension Support Aka Default Apps:
-
-Go To Your .config Folder.
-
-```shell
-cd .config
-```
-
-Now Download The mimeapps.list File
-
-```shell
-wget https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/cachyos/.config/mimeapps.list
-```
-
-## Step 5: Setup Secondary Drive Access:
+## Step 4: Setup Secondary Drive Access:
 
 Make a Mounting Folder For The Secondary Drive.
 
@@ -99,27 +89,4 @@ sudo systemctl daemon-reload
 
 ```shell
 sudo mount -a
-```
-
-## Step 6: Install ScopeBuddy: (This Makes Games Work More Nicely)
-
-> [!TIP]
-> For More Info About ScopeBuddy, Please Visit: https://docs.bazzite.gg/Advanced/scopebuddy/
-
-Download The ScopeBuddy Script.
-
-```shell
-sudo curl -Lo /usr/local/bin/scopebuddy https://raw.githubusercontent.com/HikariKnight/ScopeBuddy/refs/tags/1.3.0/bin/scopebuddy
-```
-
-Make The Script Executable.
-
-```shell
-sudo chmod +x /usr/local/bin/scopebuddy
-```
-
-Make The Script Command Shorter.
-
-```shell
-sudo ln -s scopebuddy /usr/local/bin/scb
 ```
