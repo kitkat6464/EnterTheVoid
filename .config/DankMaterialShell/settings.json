@@ -58,6 +58,7 @@
   "controlCenterShowMicPercent": false,
   "controlCenterShowBatteryIcon": false,
   "controlCenterShowPrinterIcon": false,
+  "controlCenterShowScreenSharingIcon": true,
   "showPrivacyButton": true,
   "privacyShowMicIcon": false,
   "privacyShowCameraIcon": false,
@@ -525,6 +526,12 @@
           "y": 80,
           "width": 200,
           "height": 200
+        },
+        "": {
+          "width": 120,
+          "height": 120,
+          "x": 0,
+          "y": 0
         }
       }
     },
@@ -563,6 +570,12 @@
           "y": 80,
           "width": 480,
           "height": 360
+        },
+        "": {
+          "width": 160,
+          "height": 180,
+          "x": 0,
+          "y": 0
         }
       }
     }
