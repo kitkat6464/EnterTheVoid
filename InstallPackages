@@ -75,7 +75,6 @@ PKGS=(
         'papers'
         'gnome-text-editor'
         'lact'
-        'gpu-screen-recorder-gtk'
 )
 
 for PKG in "${PKGS[@]}"; do
