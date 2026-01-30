@@ -42,7 +42,6 @@ REBOOT YOUR PC AFTER FOLLOWING THESE 2 STEPS.
 - papers (Document Viewer)
 - gnome-text-editor (Text Editor)
 - lact (GPU Utility)
-- gpu-screen-recorder-gtk (Screen Recorder)
 
 **Theming Packages:**
 - adw-gtk-theme
