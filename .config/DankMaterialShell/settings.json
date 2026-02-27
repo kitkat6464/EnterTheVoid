@@ -306,10 +306,10 @@
   "dockBorderOpacity": 1,
   "dockBorderThickness": 1,
   "dockIsolateDisplays": false,
-  "dockLauncherEnabled": false,
-  "dockLauncherLogoMode": "apps",
+  "dockLauncherEnabled": true,
+  "dockLauncherLogoMode": "os",
   "dockLauncherLogoCustomPath": "",
-  "dockLauncherLogoColorOverride": "",
+  "dockLauncherLogoColorOverride": "primary",
   "dockLauncherLogoSizeOffset": 0,
   "dockLauncherLogoBrightness": 0.5,
   "dockLauncherLogoContrast": 1,
@@ -409,7 +409,6 @@
       ],
       "showOnLastDisplay": true,
       "leftWidgets": [
-        "launcherButton",
         "workspaceSwitcher",
         "focusedWindow"
       ],
