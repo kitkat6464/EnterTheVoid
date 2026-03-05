@@ -81,7 +81,7 @@ To Continue, And You Have Read The Table's Above.
 Install Using The Command Below In Your Terminal:
 
 ```shell
-curl -fsSL https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/cachyos/InstallPackages | sh
+curl -fsSL https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/old/InstallPackages | sh
 ```
 _____________________________________________________________________________________________________________________
 
