@@ -75,6 +75,7 @@ PKGS=(
         'papers'
         'gnome-text-editor'
         'lact'
+        'bazaar'
 )
 
 for PKG in "${PKGS[@]}"; do
@@ -93,7 +94,6 @@ echo "Installing Packages From The AUR. Skull Emoji"
 echo
 
 paru -S --noconfirm qt6ct-kde
-paru -S --noconfirm bazaar
 
 echo
 echo "Done!"
@@ -118,7 +118,7 @@ echo
 echo "Installing ScopeBuddy For GameScope"
 echo
 
-sudo curl -Lo /usr/local/bin/scopebuddy https://raw.githubusercontent.com/OpenGamingCollective/ScopeBuddy/refs/tags/1.3.0/bin/scopebuddy
+sudo curl -Lo /usr/local/bin/scopebuddy https://raw.githubusercontent.com/OpenGamingCollective/ScopeBuddy/refs/tags/1.4.0/bin/scopebuddy
 sudo chmod +x /usr/local/bin/scopebuddy
 sudo ln -s scopebuddy /usr/local/bin/scb
 
