@@ -43,10 +43,6 @@ echo
 echo "Theming Packages From The Main Repo"
 echo
 
-pacman -S --noconfirm \
-  adw-gtk-theme \
-  nwg-look
-
 PKGS=(
         'adw-gtk-theme'
         'nwg-look'
