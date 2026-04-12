@@ -102,7 +102,7 @@ echo "Setting Up Default Apps"
 echo
 
 cd $HOME/.config
-wget https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/cachyos/.config/mimeapps.list
+wget https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/cachydms/.config/mimeapps.list
 
 echo
 echo "Done!"
