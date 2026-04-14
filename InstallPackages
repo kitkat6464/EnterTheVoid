@@ -20,7 +20,7 @@ echo
 echo "Installing Core Components From The Main Repo"
 echo
 
-pikman install gnome-keyring wlr-randr
+pikman install wlr-randr
 
 echo
 echo "Done!"
