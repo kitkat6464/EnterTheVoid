@@ -7,22 +7,6 @@ x-scheme-handler/mailto=firefox.desktop
 application/xhtml+xml=firefox.desktop
 text/html=firefox.desktop
 
-# Audio
-audio/x-vorbis+ogg=org.gnome.Decibels.desktop
-audio/x-speex=org.gnome.Decibels.desktop
-audio/mp2=org.gnome.Decibels.desktop
-audio/aac=org.gnome.Decibels.desktop
-audio/x-wavpack=org.gnome.Decibels.desktop
-audio/vnd.wave=org.gnome.Decibels.desktop
-audio/x-opus+ogg=org.gnome.Decibels.desktop
-audio/mpeg=org.gnome.Decibels.desktop
-audio/x-m4b=org.gnome.Decibels.desktop
-audio/mp4=org.gnome.Decibels.desktop
-audio/flac=org.gnome.Decibels.desktop
-audio/x-mpegurl=org.gnome.Decibels.desktop
-audio/x-aiff=org.gnome.Decibels.desktop
-audio/x-ape=org.gnome.Decibels.desktop
-
 # Image
 image/png=org.gnome.Loupe.desktop
 image/x-portable-pixmap=org.gnome.Loupe.desktop
@@ -45,35 +29,11 @@ image/x-exr=org.gnome.Loupe.desktop
 image/gif=org.gnome.Loupe.desktop
 image/jxl=org.gnome.Loupe.desktop
 
-# Inode
-inode/directory=org.gnome.Nautilus.desktop
-
 # Text
 text/plain=org.gnome.TextEditor.desktop
 
-# Video
-video/quicktime=org.gnome.Showtime.desktop
-video/3gpp2=org.gnome.Showtime.desktop
-video/mp2t=org.gnome.Showtime.desktop
-video/mp4=org.gnome.Showtime.desktop
-video/x-theora+ogg=org.gnome.Showtime.desktop
-video/mpeg=org.gnome.Showtime.desktop
-video/x-flic=org.gnome.Showtime.desktop
-video/x-matroska=org.gnome.Showtime.desktop
-video/vnd.rn-realvideo=org.gnome.Showtime.desktop
-video/x-nsv=org.gnome.Showtime.desktop
-video/ogg=org.gnome.Showtime.desktop
-video/x-ogm+ogg=org.gnome.Showtime.desktop
-video/vnd.mpegurl=org.gnome.Showtime.desktop
-video/vnd.vivo=org.gnome.Showtime.desktop
-video/x-mjpeg=org.gnome.Showtime.desktop
-video/webm=org.gnome.Showtime.desktop
-video/x-flv=org.gnome.Showtime.desktop
-video/x-anim=org.gnome.Showtime.desktop
-video/3gpp=org.gnome.Showtime.desktop
-video/x-ms-wmv=org.gnome.Showtime.desktop
-video/vnd.avi=org.gnome.Showtime.desktop
-video/dv=org.gnome.Showtime.desktop
-
 # PDF
 application/pdf=org.gnome.Papers.desktop
+
+# Inode
+inode/directory=org.gnome.Nautilus.desktop

@@ -8,7 +8,7 @@ echo
 echo "Refreshing Repo Information"
 echo
 
-sudo pacman -Syu --noconfirm
+pikman upgrade
 
 echo
 echo "Done!"
@@ -20,38 +20,7 @@ echo
 echo "Installing Core Components From The Main Repo"
 echo
 
-PKGS=(
-        'xdg-desktop-portal-gnome'
-        'gnome-keyring'
-        'wlr-randr'
-        'cava'
-        'flatpak'
-)
-
-for PKG in "${PKGS[@]}"; do
-    echo "INSTALLING: ${PKG}"
-    sudo pacman -S "$PKG" --noconfirm
-done
-
-echo
-echo "Done!"
-echo
-
-#-------------------------------------------------------------------------
-
-echo
-echo "Theming Packages From The Main Repo"
-echo
-
-PKGS=(
-        'adw-gtk-theme'
-        'nwg-look'
-)
-
-for PKG in "${PKGS[@]}"; do
-    echo "INSTALLING: ${PKG}"
-    sudo pacman -S "$PKG" --noconfirm
-done
+pikman install gnome-keyring wlr-randr
 
 echo
 echo "Done!"
@@ -63,33 +32,7 @@ echo
 echo "Installing Core Applications From The Main Repo"
 echo
 
-PKGS=(
-        'nautilus'
-        'loupe'
-        'decibels'
-        'showtime'
-        'papers'
-        'gnome-text-editor'
-        'lact'
-        'bazaar'
-)
-
-for PKG in "${PKGS[@]}"; do
-    echo "INSTALLING: ${PKG}"
-    sudo pacman -S "$PKG" --noconfirm
-done
-
-echo
-echo "Done!"
-echo
-
-#-------------------------------------------------------------------------
-
-echo
-echo "Installing Packages From The AUR. Skull Emoji"
-echo
-
-paru -S --noconfirm qt6ct-kde
+pikman install loupe gnome-music papers gnome-text-editor firefox lact bazaar
 
 echo
 echo "Done!"
@@ -102,7 +45,7 @@ echo "Setting Up Default Apps"
 echo
 
 cd $HOME/.config
-wget https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/cachydms/.config/mimeapps.list
+wget https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/pikadms/.config/mimeapps.list
 
 echo
 echo "Done!"
