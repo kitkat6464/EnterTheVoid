@@ -1,0 +1,11 @@
+// ────────────── Output Configuration ──────────────
+// You can run `niri msg outputs` to get the correct name for your displays.
+// You will have to remove "/-" and edit it before it takes effect.
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
+
+output "DP-2" {
+    mode "1920x1080@180.003"
+    scale 1
+    position x=0 y=0
+    focus-at-startup
+}

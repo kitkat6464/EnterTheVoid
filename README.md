@@ -13,7 +13,7 @@ ________________________________________________________________________________
 
 ![KitKat's Desktop](kitkat-desktop.png)
 
-*KitKat's Desktop Running Niri/Dank Material Shell On PikaOS*
+*KitKat's Desktop Running Niri/Noctalia Shell On PikaOS*
 
 _____________________________________________________________________________________________________________________
 
@@ -25,7 +25,6 @@ The Command To Run The Installer Is Beneath These Table's.
 
 | Applications | Explanation: |
 |:---:|:---:|
-|  nautilus |
 |  loupe |
 |  gnome-music |
 |  papers |
@@ -33,6 +32,7 @@ The Command To Run The Installer Is Beneath These Table's.
 
 | Tool's | Explanation: |
 |:---:|:---:|
+|  firefox |
 |  bazaar |
 |  lact |
 
@@ -41,7 +41,7 @@ To Continue, And You Have Read The Table's Above.
 Install Using The Command Below In Your Terminal:
 
 ```shell
-curl -fsSL https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/pikadms/InstallPackages | sh
+curl -fsSL https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/pikanoctalia/InstallPackages | sh
 ```
 _____________________________________________________________________________________________________________________
 
