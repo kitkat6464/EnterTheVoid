@@ -73,3 +73,20 @@ Reboot:
 ```shell
 sudo reboot
 ```
+
+_____________________________________________________________________________________________________________________
+
+## Step 3: Disable Mate Polkit, and Use Noctalia's Own Polkit:
+
+> [!IMPORTANT]
+> MAKE SURE TO INSTALL THE NOCTALIA POLKIT PLUGIN BEFORE CONTINUING.
+
+Disable Mate-Polkit:
+
+```shell
+sudo mv /etc/xdg/autostart/polkit-mate-authentication-agent-1.desktop /etc/xdg/autostart/polkit-mate-authentication-agent-1.desktop.bak
+```
+
+```shell
+sudo reboot
+```
