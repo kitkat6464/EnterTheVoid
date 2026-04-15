@@ -45,7 +45,7 @@ wget https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/pikanoct
 ```
 _____________________________________________________________________________________________________________________
 
-## Step 1: Setup ScopeBuddy For GameScope:
+## Step 3: Setup ScopeBuddy For GameScope:
 
 Install wlr-randr For ScopeBuddy Support On Niri:
 
@@ -68,7 +68,7 @@ sudo ln -s scopebuddy /usr/local/bin/scb
 ```
 _____________________________________________________________________________________________________________________
 
-## Step 3: Install/Setup Noctalia:
+## Step 4: Install/Setup Noctalia:
 
 Install Noctalia Shell:
 
@@ -87,7 +87,7 @@ sudo mv /etc/xdg/autostart/polkit-mate-authentication-agent-1.desktop /etc/xdg/a
 
 _____________________________________________________________________________________________________________________
 
-## Step 2: Setup Secondary Drive Access:
+## Step 5: Setup Secondary Drive Access:
 
 Make a Mounting Folder For The Secondary Drive:
 
