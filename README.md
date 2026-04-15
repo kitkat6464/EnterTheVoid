@@ -83,6 +83,8 @@ Disable Mate's Polkit:
 
 ```shell
 sudo mv /etc/xdg/autostart/polkit-mate-authentication-agent-1.desktop /etc/xdg/autostart/polkit-mate-authentication-agent-1.desktop.bak
+```
+
 _____________________________________________________________________________________________________________________
 
 ## Step 2: Setup Secondary Drive Access:
