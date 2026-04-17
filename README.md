@@ -98,7 +98,7 @@ pikman install fonts-noto fonts-noto-color-emoji
 Refresh Font Cache
 
 ```shell
-sudo mv /etc/xdg/autostart/polkit-mate-authentication-agent-1.desktop /etc/xdg/autostart/polkit-mate-authentication-agent-1.desktop.bak
+fc-cache -f
 ```
 
 _____________________________________________________________________________________________________________________
