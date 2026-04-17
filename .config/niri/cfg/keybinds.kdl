@@ -5,18 +5,28 @@ binds {
 
     // ─── noctalia-shell keybinds ───
     // https://docs.noctalia.dev/getting-started/keybinds/
+    
 
-    Mod+Shift+ESCAPE                     { show-hotkey-overlay; }
-
+    Mod+Shift+ESCAPE                    { show-hotkey-overlay; }
+    
     // ─── Applications ───
     Mod+Return                          hotkey-overlay-title="Open Terminal: Kitty" { spawn "kitty"; }
-    Mod+CTRL+Return                     hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
     Mod+B                               hotkey-overlay-title="Open Browser: firefox" { spawn "firefox"; }
-    Mod+ALT+L                           hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
-    Mod+Shift+Q                        hotkey-overlay-title="Session Menu: noctalia sessionMenu" { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
-
-    // Please choose your own file manager.
     Mod+E                               hotkey-overlay-title="File Manager: Nautilus" { spawn "nautilus"; }
+    
+    // ─── Overview ───
+    Mod+O                               repeat=false { toggle-overview; }
+    
+    // ─── Noctalia ───
+    Mod+CTRL+Return                     hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
+    Mod+X                               hotkey-overlay-title="Open Clipboard: noctalia clipboard" { spawn-sh "qs -c noctalia-shell ipc call launcher clipboard"; }
+    Mod+ALT+L                           hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
+    Mod+Shift+Q                         hotkey-overlay-title="Session Menu: noctalia sessionMenu" { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
+    
+    // ─── Screenshots ───
+    CTRL+Shift+1                        { screenshot; }
+    CTRL+Shift+2                        { screenshot-screen; }
+    CTRL+Shift+3                        { screenshot-window; }
 
     // ─── Media Controls ───
     XF86AudioRaiseVolume                allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume increase"; }
@@ -39,6 +49,7 @@ binds {
     Mod+H                               { focus-column-left; }
     Mod+Right                           { focus-column-right; }
     Mod+L                               { focus-column-right; }
+    
     Mod+Up                              { focus-window-up; }
     Mod+K                               { focus-window-up; }
     Mod+Down                            { focus-window-down; }
@@ -48,6 +59,7 @@ binds {
     Mod+CTRL+H                          { move-column-left; }
     Mod+CTRL+Right                      { move-column-right; }
     Mod+CTRL+L                          { move-column-right; }
+    
     Mod+CTRL+UP                         { move-window-up; }
     Mod+CTRL+K                          { move-window-up; }
     Mod+CTRL+Down                       { move-window-down; }
@@ -55,6 +67,7 @@ binds {
 
     Mod+Home                            { focus-column-first; }
     Mod+End                             { focus-column-last; }
+    
     Mod+CTRL+Home                       { move-column-to-first; }
     Mod+CTRL+End                        { move-column-to-last; }
 
@@ -71,16 +84,19 @@ binds {
     // ─── Workspace Switching ───
     Mod+WheelScrollDown                 cooldown-ms=150 { focus-workspace-down; }
     Mod+WheelScrollUp                   cooldown-ms=150 { focus-workspace-up; }
+    
     Mod+CTRL+WheelScrollDown            cooldown-ms=150 { move-column-to-workspace-down; }
     Mod+CTRL+WheelScrollUp              cooldown-ms=150 { move-column-to-workspace-up; }
 
     Mod+WheelScrollRight                { focus-column-right; }
     Mod+WheelScrollLeft                 { focus-column-left; }
+    
     Mod+CTRL+WheelScrollRight           { move-column-right; }
     Mod+CTRL+WheelScrollLeft            { move-column-left; }
 
     Mod+Shift+WheelScrollDown           { focus-column-right; }
     Mod+Shift+WheelScrollUp             { focus-column-left; }
+    
     Mod+CTRL+Shift+WheelScrollDown      { move-column-right; }
     Mod+CTRL+Shift+WheelScrollUp        { move-column-left; }
 
@@ -109,9 +125,12 @@ binds {
     // ─── Layout Controls ───
     Mod+CTRL+F                          { expand-column-to-available-width; }
     Mod+C                               { center-column; }
+    
     Mod+CTRL+C                          { center-visible-columns; }
+    
     Mod+Minus                           { set-column-width "-10%"; }
     Mod+Equal                           { set-column-width "+10%"; }
+    
     Mod+Shift+Minus                     { set-window-height "-10%"; }
     Mod+Shift+Equal                     { set-window-height "+10%"; }
 
@@ -119,11 +138,6 @@ binds {
     Mod+T                               { toggle-window-floating; }
     Mod+F                               { fullscreen-window; }
     Mod+W                               { toggle-column-tabbed-display; }
-
-    // ─── Screenshots ───
-    CTRL+Shift+1                        { screenshot; }
-    CTRL+Shift+2                        { screenshot-screen; }
-    CTRL+Shift+3                        { screenshot-window; }
 
     // ─── Emergency Escape Key ───
     // Use this when a fullscreen app blocks your keybinds.
@@ -133,5 +147,4 @@ binds {
     // ─── Exit / Power ───
     CTRL+ALT+Delete                     { quit; } // Also quits Niri
     Mod+Shift+P                         { power-off-monitors; } // Turn off screens (useful for OLED or privacy)
-    Mod+O                               repeat=false { toggle-overview; }
 }
