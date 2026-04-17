@@ -87,7 +87,23 @@ sudo mv /etc/xdg/autostart/polkit-mate-authentication-agent-1.desktop /etc/xdg/a
 
 _____________________________________________________________________________________________________________________
 
-## Step 5: Setup Secondary Drive Access:
+## Step 5: Fix Font's:
+
+Install Noto Font's:
+
+```shell
+pikman install fonts-noto fonts-noto-color-emoji
+```
+
+Refresh Font Cache
+
+```shell
+sudo mv /etc/xdg/autostart/polkit-mate-authentication-agent-1.desktop /etc/xdg/autostart/polkit-mate-authentication-agent-1.desktop.bak
+```
+
+_____________________________________________________________________________________________________________________
+
+## Step 6: Setup Secondary Drive Access:
 
 Make a Mounting Folder For The Secondary Drive:
 
