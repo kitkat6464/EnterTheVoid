@@ -76,6 +76,12 @@ Install Noctalia Shell:
 pikman install noctalia-shell
 ```
 
+Add User To Input Group:
+
+```shell
+sudo usermod -a -G input $USER
+```
+
 > [!IMPORTANT]
 > MAKE SURE TO INSTALL THE NOCTALIA POLKIT PLUGIN BEFORE CONTINUING. Install Noctalia's Polkit From Noctalia's Plugin Page.
 
