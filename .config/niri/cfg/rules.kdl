@@ -5,6 +5,7 @@
 
     window-rule {
         match app-id=r#"^steam$"#
+        default-column-width { proportion 0.98; }
         open-floating true
     }
 
