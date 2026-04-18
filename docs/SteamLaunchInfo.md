@@ -8,29 +8,29 @@ Steam Game Launch Setting's
 ## Non FS4 Game's: 
 
 ```shell
-scb -O DP-2 -- %command%
+scb -O DP-2 -r 180 -f -- %command%
 ```
 
 ## FSR4 Game's: (HL, Horizon, Spiderman, Stalker, Clair, Rivals, Rachet, Black Myth, Ghost of)
 
 ```shell
-PROTON_FSR4_UPGRADE=1 scb -O DP-2 -- %command%
+PROTON_FSR4_UPGRADE=1 scb -O DP-2 -r 180 -f -- %command%
 ```
 
 ## Other Game's:
 
 ```shell
-GoW: Rag: SteamDeck=1 PROTON_FSR4_UPGRADE=1 scb -O DP-2 -- %command%
+GoW: Rag: SteamDeck=1 PROTON_FSR4_UPGRADE=1 scb -O DP-2 -r 180 -f -- %command%
 ```
 
 ```shell
-Cyberpunk: PROTON_FSR4_UPGRADE=1 scb -O DP-2 -- %command% --launcher-skip
+Cyberpunk: PROTON_FSR4_UPGRADE=1 scb -O DP-2 -r 180 -f -- %command% --launcher-skip
 ```
 
 ```shell
-Witcher 2: eval $( echo "scb -O DP-2 -- %command%" | sed "s/Launcher.exe'.*/bin\/witcher2.exe'/")
+Witcher 2: eval $( echo "scb -O DP-2 -r 180 -f -- %command%" | sed "s/Launcher.exe'.*/bin\/witcher2.exe'/")
 ```
 
 ```shell
-Witcher 3: scb -O DP-2 -- %command% --launcher-skip
+Witcher 3: scb -O DP-2 -r 180 -f -- %command% --launcher-skip
 ```
