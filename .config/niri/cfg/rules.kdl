@@ -4,13 +4,12 @@
     }
 
     window-rule {
-        match app-id=r#"^steam$"#
-        default-column-width { proportion 0.98; }
-        open-floating true
+        match app-id="steam"
+        default-column-width { proportion 1.0; }
     }
 
     window-rule {
-       match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+       match app-id=r#"^steam$"# title=r#"^notificationtoasts_\d+_desktop$"#
        default-floating-position x=10 y=10 relative-to="bottom-right"
        open-focused false
     }
@@ -19,14 +18,14 @@
        match app-id=r#"^org\.wezfurlong\.wezterm$"#
        default-column-width {}
     }
-
+    
     window-rule {
        match app-id=r#"^org\.gnome\."#
        draw-border-with-background false
        geometry-corner-radius 20
        clip-to-geometry true
     }
-
+    
     window-rule {
        match app-id=r#"^gnome-control-center$"#
        match app-id=r#"^pavucontrol$"#
@@ -34,8 +33,9 @@
        default-column-width { proportion 0.5; }
        open-floating false
     }
-
+    
     window-rule {
+       match app-id=r#"^org\.gnome\.Calculator$"#
        match app-id=r#"^gnome-calculator$"#
        match app-id=r#"^galculator$"#
        match app-id=r#"^blueman-manager$"#
@@ -43,16 +43,16 @@
        match app-id=r#"^xdg-desktop-portal$"#
        open-floating true
     }
-
+    
     window-rule {
-        match app-id=r#"^org\.wezfurlong\.wezterm$"#
-        match app-id="Alacritty"
-        match app-id="zen"
-        match app-id="com.mitchellh.ghostty"
-        match app-id="kitty"
-        draw-border-with-background false
+       match app-id=r#"^org\.wezfurlong\.wezterm$"#
+       match app-id="Alacritty"
+       match app-id="zen"
+       match app-id="com.mitchellh.ghostty"
+       match app-id="kitty"
+       draw-border-with-background false
     }
-
+    
     window-rule {
        match app-id=r#"firefox$"# title="^Picture-in-Picture$"
        match app-id="zoom"
