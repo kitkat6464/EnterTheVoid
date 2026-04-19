@@ -1,4 +1,0 @@
-window-rule {
-   match app-id="^steam_app.*$"
-   open-fullscreen true
-}
