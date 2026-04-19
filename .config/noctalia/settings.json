@@ -315,12 +315,77 @@
         }
     },
     "desktopWidgets": {
-        "enabled": false,
-        "gridSnap": false,
-        "gridSnapScale": false,
+        "enabled": true,
+        "gridSnap": true,
+        "gridSnapScale": true,
         "monitorWidgets": [
+            {
+                "name": "DP-2",
+                "widgets": [
+                    {
+                        "colorName": "primary",
+                        "height": 72,
+                        "hideWhenIdle": true,
+                        "id": "AudioVisualizer",
+                        "roundedCorners": true,
+                        "scale": 1.0625,
+                        "showBackground": true,
+                        "visualizerType": "linear",
+                        "width": 320,
+                        "x": 20,
+                        "y": 960
+                    },
+                    {
+                        "colorName": "primary",
+                        "height": 72,
+                        "hideWhenIdle": true,
+                        "id": "AudioVisualizer",
+                        "roundedCorners": true,
+                        "scale": 1.0625,
+                        "showBackground": true,
+                        "visualizerType": "linear",
+                        "width": 320,
+                        "x": 1560,
+                        "y": 960
+                    },
+                    {
+                        "clockColor": "none",
+                        "clockStyle": "analog",
+                        "customFont": "",
+                        "format": "HH:mm\\nd MMMM yyyy",
+                        "id": "Clock",
+                        "roundedCorners": true,
+                        "scale": 1,
+                        "showBackground": true,
+                        "useCustomFont": false,
+                        "x": 880,
+                        "y": 60
+                    },
+                    {
+                        "hideMode": "visible",
+                        "id": "MediaPlayer",
+                        "roundedCorners": true,
+                        "scale": 1,
+                        "showAlbumArt": true,
+                        "showBackground": true,
+                        "showButtons": true,
+                        "showVisualizer": true,
+                        "visualizerType": "linear",
+                        "x": 20,
+                        "y": 80
+                    },
+                    {
+                        "id": "Weather",
+                        "roundedCorners": true,
+                        "scale": 1,
+                        "showBackground": true,
+                        "x": 1660,
+                        "y": 80
+                    }
+                ]
+            }
         ],
-        "overviewEnabled": true
+        "overviewEnabled": false
     },
     "dock": {
         "animationSpeed": 1,
