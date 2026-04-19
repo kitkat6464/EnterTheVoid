@@ -4,7 +4,9 @@ ADDING THIS CAUSE INCASE I HIT MY HEAD, AND FORGET HOW TO DO STUFF
 
 <div align="center">
 My Dot Files Are In The config Branch. Keeping The 2 Branch Separated To Keep Thing's Clean And Organised.
+  
 [You Can Find Them Here](https://github.com/kitkat6464/my_configs/tree/configs)
+
 </div>
 
 _____________________________________________________________________________________________________________________
