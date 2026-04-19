@@ -13,7 +13,7 @@ ________________________________________________________________________________
 
 ![KitKat's Desktop](kitkats-desktop.png)
 
-*KitKat's Desktop Running Niri/Noctalia Shell On PikaOS*
+*KitKat's Desktop Included With Desktop Widget's Running Niri/Noctalia Shell On PikaOS*
 
 _____________________________________________________________________________________________________________________
 
