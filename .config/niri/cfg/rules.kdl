@@ -1,63 +1,63 @@
-    window-rule {
-        geometry-corner-radius 20
-        clip-to-geometry true
-        tiled-state true
-        draw-border-with-background false
-    }
-    
-    window-rule {
-        match is-active=false
-        opacity 0.95
-    }
-    
-    window-rule {
-    	match is-floating=true
-    	shadow {
-            on
-    	}
-    }
-    
-    window-rule {
-    	match app-id="firefox"
-    	match app-id="Modrinth-app-wrapped"
-    	match app-id="spotify"
-    	match app-id="steam"
-    	match app-id="vlc"
-        open-maximized true
-    }
-    
-    window-rule {
-        match app-id=r#"^org\.gnome\.Nautilus$"#
-        match app-id=r#"^xdg-desktop-portal$"#
-        match app-id=r#"firefox$"# title="^Picture-in-Picture$"
-        match app-id="nm-connection-editor"
-        match app-id="nwg-look"
-        match app-id="io.github.ilya_zlobintsev.LACT"
-        match app-id="com.saivert.pwvucontrol"
-        match app-id="qt6ct"
-        match app-id="UXTerm"
-        match app-id="webapp-manager.py"
-        match app-id="control.exe"
-        match app-id="zenity"
-        match app-id="XTerm"
-        open-floating true
-    }
-    
-    window-rule {
-        match app-id="kitty"
-        default-column-width { proportion 0.6; }
-        default-window-height { proportion 0.7; }
-        open-floating true
-    }
+window-rule {
+    geometry-corner-radius 20
+    clip-to-geometry true
+    tiled-state true
+    draw-border-with-background false
+}
 
-    window-rule {
-        match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
-        default-floating-position x=10 y=10 relative-to="bottom-right"
-        open-focused false
-    }
+window-rule {
+    match is-active=false
+    opacity 0.95
+}
 
-    layer-rule {
-        match namespace="^noctalia-overview*"
-        place-within-backdrop true
+window-rule {
+    match is-floating=true
+    shadow {
+        on
     }
-    
+}
+
+window-rule {
+    match app-id="firefox"
+    match app-id="Modrinth-app-wrapped"
+    match app-id="spotify"
+    match app-id="steam"
+    match app-id="vlc"
+    open-maximized true
+}
+
+window-rule {
+    match app-id=r#"^org\.gnome\.Nautilus$"#
+    match app-id=r#"^xdg-desktop-portal$"#
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match app-id="nm-connection-editor"
+    match app-id="nwg-look"
+    match app-id="io.github.ilya_zlobintsev.LACT"
+    match app-id="com.saivert.pwvucontrol"
+    match app-id="qt6ct"
+    match app-id="UXTerm"
+    match app-id="webapp-manager.py"
+    match app-id="control.exe"
+    match app-id="zenity"
+    match app-id="XTerm"
+    open-floating true
+}
+
+window-rule {
+    match app-id="kitty"
+    default-column-width { proportion 0.6; }
+    default-window-height { proportion 0.7; }
+    open-floating true
+}
+
+window-rule {
+    match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+    default-floating-position x=10 y=10 relative-to="bottom-right"
+    open-focused false
+}
+
+layer-rule {
+    match namespace="^noctalia-overview*"
+    place-within-backdrop true
+}
+

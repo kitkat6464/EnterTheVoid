@@ -1,31 +1,31 @@
-    prefer-no-csd
-    screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+prefer-no-csd
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
-    environment {
-        MOZ_ENABLE_WAYLAND "1"
-        XDG_SESSION_TYPE "wayland"
-        XDG_CURRENT_DESKTOP "niri"
-        XDG_SESSION_DESKTOP "niri"
-        MOZ_DBUS_REMOTE "1"
-        GDK_BACKEND "wayland"
-        QT_AUTO_SCREEN_SCALE_FACTOR "1"
-        QT_WAYLAND_FORCE_DPI "physical"
-        EGL_PLATFORM "wayland"
-        CLUTTER_BACKEND "wayland"
-        TERM "kitty"
-        TERMINAL "kitty"
-        _JAVA_AWT_WM_NONREPARENTING "1"
-        ELECTRON_OZONE_PLATFORM_HINT "auto"
-        QT_QPA_PLATFORMTHEME "qt6ct"
-        //nv __GL_VRR_ALLOWED "1"
-        //nv __GL_GSYNC_ALLOWED "1"
-    }
+environment {
+    MOZ_ENABLE_WAYLAND "1"
+    XDG_SESSION_TYPE "wayland"
+    XDG_CURRENT_DESKTOP "niri"
+    XDG_SESSION_DESKTOP "niri"
+    MOZ_DBUS_REMOTE "1"
+    GDK_BACKEND "wayland"
+    QT_AUTO_SCREEN_SCALE_FACTOR "1"
+    QT_WAYLAND_FORCE_DPI "physical"
+    EGL_PLATFORM "wayland"
+    CLUTTER_BACKEND "wayland"
+    TERM "kitty"
+    TERMINAL "kitty"
+    _JAVA_AWT_WM_NONREPARENTING "1"
+    ELECTRON_OZONE_PLATFORM_HINT "auto"
+    QT_QPA_PLATFORMTHEME "qt6ct"
+    //nv __GL_VRR_ALLOWED "1"
+    //nv __GL_GSYNC_ALLOWED "1"
+}
 
-    debug {
-        // Allows notification actions and window activation from Noctalia.
-        honor-xdg-activation-with-invalid-serial
-    }
+debug {
+    honor-xdg-activation-with-invalid-serial
+}
 
-    hotkey-overlay {
-       skip-at-startup
-    }
+hotkey-overlay {
+    skip-at-startup
+}
+
