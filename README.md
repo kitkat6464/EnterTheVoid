@@ -40,7 +40,7 @@ ________________________________________________________________________________
 Install Core Application's:
 
 ```shell
-pikman install loupe papers gnome-text-editor firefox lact bazaar fastfetch
+pikman install loupe papers gnome-text-editor secrets firefox lact bazaar fastfetch
 ```
 
 Setup Default Application's:
