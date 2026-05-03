@@ -9,11 +9,9 @@ My Dot Files Are In The config Branch. Keeping 2 Branches Separated To Keep Thin
 [You Can Find Them Here](https://github.com/kitkat6464/my_configs/tree/configs)
 
 </div>
-_____________________________________________________________________________________________________________________
 
 > [!IMPORTANT]
 > Install Using The PikaOS's Niri ISO.
-_____________________________________________________________________________________________________________________
 
 ## Screenshots:
 
