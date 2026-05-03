@@ -1,21 +1,18 @@
 <div align="center">
 ADDING THIS CAUSE INCASE I HIT MY HEAD, AND FORGET HOW TO DO STUFF
 </div>
-
 _____________________________________________________________________________________________________________________
 
 <div align="center">
-My Dot Files Are In The config Branch. Keeping The 2 Branches Separated To Keep Thing's Clean And Organised.
-  
+My Dot Files Are In The config Branch. Keeping 2 Branches Separated To Keep Thing's Clean And Organised.
+
 [You Can Find Them Here](https://github.com/kitkat6464/my_configs/tree/configs)
 
 </div>
-
 _____________________________________________________________________________________________________________________
 
 > [!IMPORTANT]
 > Install Using The PikaOS's Niri ISO.
-
 _____________________________________________________________________________________________________________________
 
 ## Screenshots:
@@ -23,12 +20,9 @@ ________________________________________________________________________________
 ![KitKat's Desktop](kitkats-desktop.png)
 
 *KitKat's Desktop Included With Desktop Widget's Running Niri/Noctalia Shell On PikaOS*
-
 _____________________________________________________________________________________________________________________
 
 ## Step 1: Update/Upgrade System Package's:
-
-Make Sure All System Package's Are Up to Date:
 
 ```shell
 pikman upgrade
@@ -37,13 +31,12 @@ ________________________________________________________________________________
 
 ## Step 2: Install/Setup Stock App's:
 
-Install Core Application's:
-
 ```shell
 pikman install loupe papers gnome-text-editor secrets firefox lact bazaar fastfetch
 ```
+_____________________________________________________________________________________________________________________
 
-Setup Default Application's:
+## Step 3: Setup Default Application's:
 
 ```shell
 cd $HOME/.config
@@ -54,15 +47,14 @@ wget https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/configs/
 ```
 _____________________________________________________________________________________________________________________
 
-## Step 3: Setup ScopeBuddy For GameScope:
-
-Install wlr-randr For ScopeBuddy Support On Niri:
+## Step 3: Install wlr-randr For ScopeBuddy:
 
 ```shell
 pikman install wlr-randr
 ```
+_____________________________________________________________________________________________________________________
 
-Install ScopeBuddy:
+## Step 3: Install ScopeBuddy:
 
 ```shell
 sudo curl -Lo /usr/local/bin/scopebuddy https://raw.githubusercontent.com/OpenGamingCollective/ScopeBuddy/refs/tags/1.4.0/bin/scopebuddy
@@ -79,72 +71,57 @@ ________________________________________________________________________________
 
 ## Step 4: Install/Setup Noctalia:
 
-Install Noctalia Shell:
-
 ```shell
 pikman install noctalia-shell
 ```
 
-Add User To Input Group:
-
-```shell
-sudo usermod -a -G input $USER
-```
-
 > [!IMPORTANT]
-> MAKE SURE TO INSTALL THE NOCTALIA POLKIT PLUGIN BEFORE CONTINUING. Install Noctalia's Polkit From Noctalia's Plugin Page.
-
-Disable Mate's Polkit:
+> MAKE SURE TO INSTALL THE NOCTALIA POLKIT PLUGIN BEFORE CONTINUING. Install Noctalia's Polkit From Noctalia's Plugin Page. This Command Will Disable Mate's Polkit
 
 ```shell
 sudo mv /etc/xdg/autostart/polkit-mate-authentication-agent-1.desktop /etc/xdg/autostart/polkit-mate-authentication-agent-1.desktop.bak
 ```
-
 _____________________________________________________________________________________________________________________
 
-## Step 5: Fix Font's:
-
-Install Noto Font's:
+## Step 5: Install And Fix Font's:
 
 ```shell
 pikman install fonts-noto fonts-noto-color-emoji
 ```
 
-Refresh Font Cache
-
 ```shell
 fc-cache -f
 ```
-
 _____________________________________________________________________________________________________________________
 
 ## Step 6: Setup Secondary Drive Access:
-
-Make a Mounting Folder For The Secondary Drive:
 
 ```shell
 sudo mkdir /mnt/games
 ```
 
-Use This Command To Find Your Drive UUID:
+> [!IMPORTANT]
+> Use This Command To Find Your Drive UUID.
 
 ```shell
 lsblk -f
 ```
 
-Add Your Drive To The fstab File:
+> [!IMPORTANT]
+> Modify fstab Very Carefully.
 
 ```shell
 sudo nano /etc/fstab
 ```
+
 | Example: |
 |:---:|
 | UUID=YOURDRIVEUUID /mnt/games     btrfs   defaults,noatime,x-gvfs-show,compress=zstd,commit=120 0 0 |
 
-Reboot Your PC:
+> [!IMPORTANT]
+> Now Reboot Your PC.
 
 ```shell
 sudo reboot
 ```
-
 _____________________________________________________________________________________________________________________
