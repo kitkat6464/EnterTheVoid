@@ -74,10 +74,25 @@ pikman install noctalia-shell
 ```
 
 > [!IMPORTANT]
-> MAKE SURE TO INSTALL THE NOCTALIA POLKIT PLUGIN BEFORE CONTINUING. Install Noctalia's Polkit From Noctalia's Plugin Page. This Command Will Disable Mate's Polkit
+> MAKE SURE TO INSTALL THE NOCTALIA POLKIT PLUGIN BEFORE CONTINUING. Install Noctalia's Polkit From Noctalia's Plugin Page. This Command Will Disable Mate's Polkit.
 
 ```shell
 sudo mv /etc/xdg/autostart/polkit-mate-authentication-agent-1.desktop /etc/xdg/autostart/polkit-mate-authentication-agent-1.desktop.bak
+```
+
+> [!IMPORTANT]
+> This Disables The HyprIdle Crap That's Preinstalled With Pika's Niri ISO.
+
+```shell
+killall hypridle
+```
+
+```shell
+systemctl --user disable --now hypridle.service
+```
+
+```shell
+systemctl --user mask hypridle.service
 ```
 _____________________________________________________________________________________________________________________
 
