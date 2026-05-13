@@ -37,7 +37,7 @@ echo
 echo "Install Game Launchers (Aur)"
 echo
 
-yay -S heroic-games-launcher-bin faugus-launcher protonplus
+yay -S --noconfirm heroic-games-launcher-bin faugus-launcher protonplus
 
 echo
 echo "Done!"
