@@ -11,110 +11,37 @@ My Dot Files Are In The config Branch. Keeping 2 Branches Separated To Keep Thin
 </div>
 
 > [!IMPORTANT]
-> Install Using The PikaOS's Niri ISO.
+> Install Using EndeavourOS's ISO. Use The No Desktop Option.
 
 ## Screenshots:
 
 ![KitKat's Desktop](kitkats-desktop.png)
 
-*KitKat's Desktop Included With Desktop Widget's Running Niri/Noctalia Shell On PikaOS*
+*KitKat's Desktop Included With Desktop Widget's Running Niri/Noctalia Shell On EndeavourOS*
 _____________________________________________________________________________________________________________________
 
-## Step 1: Update/Upgrade System Package's:
+## Step 1: Install Noctalia and It's Much Needed Components:
 
 ```shell
-pikman upgrade
-```
-_____________________________________________________________________________________________________________________
-
-## Step 2: Install/Setup Stock App's:
-
-```shell
-pikman install loupe papers gnome-text-editor secrets firefox lact bazaar fastfetch
+curl -fsSL https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/eos/NoctaliaInstaller | sh
 ```
 _____________________________________________________________________________________________________________________
 
-## Step 3: Setup Default Application's:
+## Step 2: Install Gaming Support and It's Much Needed Components:
 
 ```shell
-cd $HOME/.config
-```
-
-```shell
-wget https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/configs/.config/mimeapps.list
+curl -fsSL https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/eos/GamingAdditions | sh
 ```
 _____________________________________________________________________________________________________________________
 
-## Step 3: Install wlr-randr For ScopeBuddy:
-
-```shell
-pikman install wlr-randr
-```
-_____________________________________________________________________________________________________________________
-
-## Step 3: Install ScopeBuddy:
-
-```shell
-sudo curl -Lo /usr/local/bin/scopebuddy https://raw.githubusercontent.com/OpenGamingCollective/ScopeBuddy/refs/tags/1.4.0/bin/scopebuddy
-```
-
-```shell
-sudo chmod +x /usr/local/bin/scopebuddy
-```
-
-```shell
-sudo ln -s scopebuddy /usr/local/bin/scb
-```
-_____________________________________________________________________________________________________________________
-
-## Step 4: Install/Setup Noctalia:
-
-```shell
-pikman install noctalia-shell
-```
-
-> [!IMPORTANT]
-> MAKE SURE TO INSTALL THE NOCTALIA POLKIT PLUGIN BEFORE CONTINUING. Install Noctalia's Polkit From Noctalia's Plugin Page. This Command Will Disable Mate's Polkit.
-
-```shell
-sudo mv /etc/xdg/autostart/polkit-mate-authentication-agent-1.desktop /etc/xdg/autostart/polkit-mate-authentication-agent-1.desktop.bak
-```
-
-> [!IMPORTANT]
-> This Disables The HyprIdle Crap That's Preinstalled With Pika's Niri ISO.
-
-```shell
-killall hypridle
-```
-
-```shell
-systemctl --user disable --now hypridle.service
-```
-
-```shell
-systemctl --user mask hypridle.service
-```
-_____________________________________________________________________________________________________________________
-
-## Step 5: Install And Fix Font's:
-
-```shell
-pikman install fonts-noto fonts-noto-color-emoji
-```
-
-```shell
-fc-cache -f
-```
-_____________________________________________________________________________________________________________________
-
-## Step 6: Setup Secondary Drive Access:
+## Step 3: Setup Secondary Drive Access:
 
 ```shell
 sudo mkdir /mnt/games
 ```
 
 > [!IMPORTANT]
-> Use This Command To Find Your Drive UUID.
+> Use This Command To Find Your Drive's UUID.
 
 ```shell
 lsblk -f

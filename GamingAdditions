@@ -1,0 +1,93 @@
+#!/usr/bin/env bash
+
+#-------------------------------------------------#
+# Start - Catrina's Post Setup - Gaming Additions #
+#-------------------------------------------------#
+
+echo
+echo "Refresh Repos"
+echo
+
+sudo pacman -Syu
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Install Game Launchers (Non Aur)"
+echo
+
+PKGS=(
+	'steam'
+	'lutris'
+	'umu-launcher'
+)
+
+for PKG in "${PKGS[@]}"; do
+	echo "INSTALLING: ${PKG}"
+	sudo pacman -S "$PKG" --noconfirm
+done
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Install Game Launchers (Aur)"
+echo
+
+yay -S heroic-games-launcher-bin faugus-launcher protonplus
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Install Game Dependencies"
+echo
+
+PKGS=(
+	'mangohud'
+	'goverlay'
+	'gamescope'
+	'lib32-mangohud'
+)
+
+for PKG in "${PKGS[@]}"; do
+	echo "INSTALLING: ${PKG}"
+	sudo pacman -S "$PKG" --noconfirm
+done
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Optimizing System For Gaming"
+echo
+
+sudo curl -Lo /usr/lib/modules-load.d/ntsync.conf https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/eos/configs/ntsync.conf
+sudo curl -Lo /usr/lib/sysctl.d/99-splitlock.conf https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/eos/configs/99-splitlock.conf
+sudo curl -Lo /usr/lib/sysctl.d/70-eos-settings.conf https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/eos/configs/70-eos-settings.conf
+
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Install ScopeBuddy For GameScope"
+echo
+
+sudo curl -Lo /usr/local/bin/scopebuddy https://raw.githubusercontent.com/OpenGamingCollective/ScopeBuddy/refs/tags/1.4.0/bin/scopebuddy
+sudo chmod +x /usr/local/bin/scopebuddy
+sudo ln -s scopebuddy /usr/local/bin/scb
+
+echo
+echo "Done!"
+echo
+
+#-----------------------------------------------#
+# End - Catrina's Post Setup - Gaming Additions #
+#-----------------------------------------------#
