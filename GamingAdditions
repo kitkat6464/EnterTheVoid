@@ -67,10 +67,14 @@ echo
 echo "Optimizing System For Gaming"
 echo
 
+sudo curl -Lo /etc/security/limits.d/99-eos.conf https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/eos/configs/99-eos.conf
 sudo curl -Lo /usr/lib/modules-load.d/ntsync.conf https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/eos/configs/ntsync.conf
 sudo curl -Lo /usr/lib/sysctl.d/99-splitlock.conf https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/eos/configs/99-splitlock.conf
 sudo curl -Lo /usr/lib/sysctl.d/70-eos-settings.conf https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/eos/configs/70-eos-settings.conf
-
+sudo curl -Lo /usr/lib/systemd/user.conf.d/00-timeout.conf https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/eos/configs/user/00-timeout.conf
+sudo curl -Lo /usr/lib/systemd/user.conf.d/10-limits.conf https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/eos/configs/user/10-limits.conf
+sudo curl -Lo /usr/lib/systemd/system.conf.d/00-timeout.conf https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/eos/configs/system/00-timeout.conf
+sudo curl -Lo /usr/lib/systemd/system.conf.d/10-limits.conf https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/eos/configs/system/10-limits.conf
 
 echo
 echo "Done!"
