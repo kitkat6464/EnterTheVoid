@@ -1,0 +1,155 @@
+#!/usr/bin/env bash
+
+#----------------------------------------#
+# Start - Catrina's Post Setup - Midgard #
+#----------------------------------------#
+
+echo
+echo "Refreshing Repos"
+echo
+
+sudo pacman -Syu
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Installing Noctalia Core Deps"
+echo
+
+PKGS=(
+	'cava'
+	'ddcutil'
+	'cliphist'
+	'wlsunset'
+)
+
+for PKG in "${PKGS[@]}"; do
+	echo "INSTALLING: ${PKG}"
+	sudo pacman -S "$PKG" --noconfirm
+done
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Installing Noctalia Plugin Deps"
+echo
+
+PKGS=(
+	'evtest'
+	'gpu-screen-recorder'
+)
+
+for PKG in "${PKGS[@]}"; do
+	echo "INSTALLING: ${PKG}"
+	sudo pacman -S "$PKG" --noconfirm
+done
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Installing Theming Apps"
+echo
+
+PKGS=(
+	'qt6ct'
+	'nwg-look'
+)
+
+for PKG in "${PKGS[@]}"; do
+	echo "INSTALLING: ${PKG}"
+	sudo pacman -S "$PKG" --noconfirm
+done
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Installing CursorIcon Themes"
+echo
+
+yay -S --noconfirm rose-pine-cursor papirus-icon-theme-git
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Installing Gnome Apps"
+echo
+
+PKGS=(
+	'loupe'
+	'papers'
+	'secrets'
+	'gnome-text-editor'
+)
+
+for PKG in "${PKGS[@]}"; do
+	echo "INSTALLING: ${PKG}"
+	sudo pacman -S "$PKG" --noconfirm
+done
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Installing Additional Apps"
+echo
+
+PKGS=(
+	'vlc'
+	'lact'
+	'kitty'
+	'bazaar'
+	'protonplus'
+)
+
+for PKG in "${PKGS[@]}"; do
+	echo "INSTALLING: ${PKG}"
+	sudo pacman -S "$PKG" --noconfirm
+done
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Installing Tools"
+echo
+
+PKGS=(
+	'qemu-full'
+	'virt-manager'
+)
+
+for PKG in "${PKGS[@]}"; do
+	echo "INSTALLING: ${PKG}"
+	sudo pacman -S "$PKG" --noconfirm
+done
+
+echo
+echo "Done!"
+echo
+
+
+echo
+echo "Setting Default Apps"
+echo
+
+sudo curl -Lo $HOME/.config/mimeapps.list https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/configs/.config/mimeapps.list
+
+echo
+echo "Done!"
+echo
+
+#--------------------------------------#
+# End - Catrina's Post Setup - Midgard #
+#--------------------------------------#
