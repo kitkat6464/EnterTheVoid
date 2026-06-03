@@ -5,7 +5,7 @@
 #----------------------------------------#
 
 echo
-echo "Refreshing Repos"
+echo "Refresh Repos"
 echo
 
 sudo pacman -Syu
@@ -15,7 +15,7 @@ echo "Done!"
 echo
 
 echo
-echo "Installing Noctalia Core Deps"
+echo "Install Noctalia Core Deps"
 echo
 
 PKGS=(
@@ -35,7 +35,7 @@ echo "Done!"
 echo
 
 echo
-echo "Installing Noctalia Plugin Deps"
+echo "Install Noctalia Plugin Deps"
 echo
 
 PKGS=(
@@ -53,7 +53,7 @@ echo "Done!"
 echo
 
 echo
-echo "Installing Theming Apps"
+echo "Install Theming Apps"
 echo
 
 PKGS=(
@@ -71,23 +71,12 @@ echo "Done!"
 echo
 
 echo
-echo "Installing CursorIcon Themes"
-echo
-
-yay -S --noconfirm rose-pine-cursor papirus-icon-theme-git
-
-echo
-echo "Done!"
-echo
-
-echo
-echo "Installing Gnome Apps"
+echo "Install Gnome Apps"
 echo
 
 PKGS=(
 	'loupe'
 	'papers'
-	'secrets'
 	'gnome-text-editor'
 )
 
@@ -101,7 +90,7 @@ echo "Done!"
 echo
 
 echo
-echo "Installing Additional Apps"
+echo "Install Additional Apps"
 echo
 
 PKGS=(
@@ -122,26 +111,7 @@ echo "Done!"
 echo
 
 echo
-echo "Installing Tools"
-echo
-
-PKGS=(
-	'qemu-full'
-	'virt-manager'
-)
-
-for PKG in "${PKGS[@]}"; do
-	echo "INSTALLING: ${PKG}"
-	sudo pacman -S "$PKG" --noconfirm
-done
-
-echo
-echo "Done!"
-echo
-
-
-echo
-echo "Setting Default Apps"
+echo "Set Up Default Apps"
 echo
 
 sudo curl -Lo $HOME/.config/mimeapps.list https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/configs/.config/mimeapps.list
