@@ -1,16 +1,16 @@
 <div align="center">
-Needing Access To A Bleeding Edge Traditional Distro ATM. Dev Packages Too Out Dated On PikaOS.
+For EndeavourOS.
 </div>
 _____________________________________________________________________________________________________________________
 
-## Step 1: Install OOTB Experience:
+## Step 1: Install:
 
 ```shell
 curl -fsSL https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/Installer | sh
 ```
 _____________________________________________________________________________________________________________________
 
-## Step 2: Setup Secondary Drive Access:
+## Step 2: Setup Secondary Drive:
 
 ```shell
 sudo mkdir /mnt/games
@@ -24,7 +24,7 @@ lsblk -f
 ```
 
 > [!IMPORTANT]
-> Modify fstab Very Carefully.
+> Modify fstab Carefully.
 
 ```shell
 sudo nano /etc/fstab

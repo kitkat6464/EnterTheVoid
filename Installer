@@ -15,90 +15,14 @@ echo "Done!"
 echo
 
 echo
-echo "Install Noctalia Core Deps"
+echo "Install Apps"
 echo
 
 PKGS=(
-	'cava'
-	'ddcutil'
-	'cliphist'
-	'wlsunset'
-)
-
-for PKG in "${PKGS[@]}"; do
-	echo "INSTALLING: ${PKG}"
-	sudo pacman -S "$PKG" --noconfirm
-done
-
-echo
-echo "Done!"
-echo
-
-echo
-echo "Install Noctalia Plugin Deps"
-echo
-
-PKGS=(
-	'evtest'
-	'gpu-screen-recorder'
-)
-
-for PKG in "${PKGS[@]}"; do
-	echo "INSTALLING: ${PKG}"
-	sudo pacman -S "$PKG" --noconfirm
-done
-
-echo
-echo "Done!"
-echo
-
-echo
-echo "Install Theming Apps"
-echo
-
-PKGS=(
-	'qt6ct'
-	'nwg-look'
-)
-
-for PKG in "${PKGS[@]}"; do
-	echo "INSTALLING: ${PKG}"
-	sudo pacman -S "$PKG" --noconfirm
-done
-
-echo
-echo "Done!"
-echo
-
-echo
-echo "Install Gnome Apps"
-echo
-
-PKGS=(
-	'loupe'
-	'papers'
-	'gnome-text-editor'
-)
-
-for PKG in "${PKGS[@]}"; do
-	echo "INSTALLING: ${PKG}"
-	sudo pacman -S "$PKG" --noconfirm
-done
-
-echo
-echo "Done!"
-echo
-
-echo
-echo "Install Additional Apps"
-echo
-
-PKGS=(
-	'vlc'
 	'lact'
 	'kitty'
 	'bazaar'
-	'protonplus'
+	'fastfetch'
 )
 
 for PKG in "${PKGS[@]}"; do
@@ -111,10 +35,42 @@ echo "Done!"
 echo
 
 echo
-echo "Set Up Default Apps"
+echo "Install Game Stuff"
 echo
 
-sudo curl -Lo $HOME/.config/mimeapps.list https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/configs/.config/mimeapps.list
+PKGS=(
+	'steam'
+	'lutris'
+	'mangohud'
+	'goverlay'
+	'gamescope'
+	'umu-launcher'
+	'lib32-mangohud'
+)
+
+for PKG in "${PKGS[@]}"; do
+	echo "INSTALLING: ${PKG}"
+	sudo pacman -S "$PKG" --noconfirm
+done
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Install System Tools"
+echo
+
+PKGS=(
+	'scx-tools'
+	'scx-scheds'
+	'zram-generator'
+)
+
+for PKG in "${PKGS[@]}"; do
+	echo "INSTALLING: ${PKG}"
+	sudo pacman -S "$PKG" --noconfirm
+done
 
 echo
 echo "Done!"
@@ -122,4 +78,14 @@ echo
 
 #--------------------------------------#
 # End - Catrina's Post Setup - Midgard #
+#--------------------------------------#
+
+#--------------------------------------#
+# System Utils:                        #
+# - Flat Seal                          #
+# - Warehouse                          #
+#                                      #
+# Gaming Utils:                        #
+# - Proton Plus                        #
+# - Proton Tricks                      #
 #--------------------------------------#
