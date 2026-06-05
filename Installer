@@ -8,25 +8,46 @@ echo
 echo "Refresh Repos"
 echo
 
-sudo pacman -Syu
+sudo pacman -Syu --noconfirm
 
 echo
 echo "Done!"
 echo
 
 echo
-echo "Install Portal and Keyring"
+echo "Install Cosmic DE"
 echo
 
 PKGS=(
-	'xdg-desktop-portal-gtk'
+	'cosmic'
 	'gnome-keyring'
+	'xdg-desktop-portal-gtk'
 )
 
 for PKG in "${PKGS[@]}"; do
 	echo "INSTALLING: ${PKG}"
 	sudo pacman -S "$PKG" --noconfirm
 done
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Set Graphical Target"
+echo
+
+sudo systemctl set-default graphical.target
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Enable Cosmic Greeter"
+echo
+
+sudo systemctl enable cosmic-greeter.service
 
 echo
 echo "Done!"
@@ -104,15 +125,25 @@ echo
 echo "Done!"
 echo
 
+echo
+echo "Refresh Repos Again"
+echo
+
+sudo pacman -Syu --noconfirm
+
+echo
+echo "Done!"
+echo
+
 #--------------------------------------#
 # End - Catrina's Post Setup - Midgard #
 #--------------------------------------#
 
 #--------------------------------------#
 # System Utils:                        #
+# - Lact                               #
 # - Flat Seal                          #
 # - Warehouse                          #
-# - Lact                               #
 #                                      #
 # Gaming Utils:                        #
 # - Lutris                             #
