@@ -15,6 +15,24 @@ echo "Done!"
 echo
 
 echo
+echo "Install Portal and Keyring"
+echo
+
+PKGS=(
+	'xdg-desktop-portal-gtk'
+	'gnome-keyring'
+)
+
+for PKG in "${PKGS[@]}"; do
+	echo "INSTALLING: ${PKG}"
+	sudo pacman -S "$PKG" --noconfirm
+done
+
+echo
+echo "Done!"
+echo
+
+echo
 echo "Install Apps"
 echo
 
