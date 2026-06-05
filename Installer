@@ -58,6 +58,19 @@ echo "Done!"
 echo
 
 echo
+echo "Install ScopeBuddy and wlr-randr"
+echo
+
+sudo pacman -S wlr-randr --noconfirm
+sudo wget -O /usr/local/bin/scopebuddy https://raw.githubusercontent.com/OpenGamingCollective/ScopeBuddy/refs/tags/1.4.0/bin/scopebuddy
+sudo chmod +x /usr/local/bin/scopebuddy
+sudo ln -s scopebuddy /usr/local/bin/scb
+
+echo
+echo "Done!"
+echo
+
+echo
 echo "Install System Tools"
 echo
 
