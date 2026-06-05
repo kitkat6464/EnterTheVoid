@@ -37,7 +37,6 @@ echo "Install Apps"
 echo
 
 PKGS=(
-	'lact'
 	'kitty'
 	'bazaar'
 	'fastfetch'
@@ -58,9 +57,7 @@ echo
 
 PKGS=(
 	'steam'
-	'lutris'
 	'mangohud'
-	'goverlay'
 	'gamescope'
 	'umu-launcher'
 	'lib32-mangohud'
@@ -115,8 +112,11 @@ echo
 # System Utils:                        #
 # - Flat Seal                          #
 # - Warehouse                          #
+# - Lact                               #
 #                                      #
 # Gaming Utils:                        #
+# - Lutris                             #
+# - Goverlay                           #
 # - Proton Plus                        #
 # - Proton Tricks                      #
 #--------------------------------------#
