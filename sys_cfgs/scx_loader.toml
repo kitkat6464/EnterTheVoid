@@ -1,2 +1,2 @@
-default_sched = "scx_cosmos"
-default_mode = "LowLatency"
+default_sched = "scx_lavd"
+default_mode = "Gaming"
