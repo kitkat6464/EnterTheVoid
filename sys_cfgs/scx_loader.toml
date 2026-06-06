@@ -1,0 +1,2 @@
+default_sched = "scx_cosmos"
+default_mode = "LowLatency"
