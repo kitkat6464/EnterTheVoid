@@ -161,9 +161,10 @@ sudo systemctl restart scx_loader.service
 
 sudo wget -O /etc/security/limits.conf https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/sys_cfgs/security/limits.conf
 
-sudo wget -O /etc/systemd/system.conf.d/10-limits.conf https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/sys_cfgs/systemd/system/10-limits.conf
-
-sudo wget -O /etc/systemd/user.conf.d/10-limits.conf https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/sys_cfgs/systemd/user/10-limits.conf
+sudo mkdir /usr/lib/systemd/system.conf.d
+sudo mkdir /usr/lib/systemd/user.conf.d
+sudo wget -O /usr/lib/systemd/system.conf.d/10-limits.conf https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/sys_cfgs/systemd/system/10-limits.conf
+sudo wget -O /usr/lib/systemd/user.conf.d/10-limits.conf https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/sys_cfgs/systemd/user/10-limits.conf
 
 sudo wget -O /usr/lib/modules-load.d/ntsync.conf https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/sys_cfgs/modules-load.d/ntsync.conf
 
