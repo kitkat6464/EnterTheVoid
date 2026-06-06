@@ -167,16 +167,6 @@ echo
 echo "Done!"
 echo
 
-echo
-echo "Refresh Repos Again"
-echo
-
-sudo pacman -Syu --noconfirm
-
-echo
-echo "Done!"
-echo
-
 #--------------------------------------#
 # End - Catrina's Post Setup - Midgard #
 #--------------------------------------#
