@@ -135,6 +135,48 @@ echo
 echo "Done!"
 echo
 
+echo
+echo "Apply Optimsations"
+echo
+
+sudo wget -O /etc/sysctl.d/70-aleph-settings.conf https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/sys_cfgs/70-aleph-settings.conf
+
+sudo wget -O /etc/sysctl.d/99-splitlock.conf https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/sys_cfgs/99-splitlock.conf
+
+sudo sysctl --system
+
+sudo wget -O /etc/systemd/zram-generator.conf https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/sys_cfgs/zram-generator.conf
+
+sudo wget -O /etc/udev/rules.d/30-zram.rules https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/sys_cfgs/30-zram.rules
+
+sudo systemctl daemon-reload
+
+sudo systemctl start /dev/zram0
+
+sudo systemctl enable --now scx_loader.service
+
+sudo wget -O /etc/scx_loader.toml https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/sys_cfgs/scx_loader.toml
+
+sudo systemctl restart scx_loader.service
+
+sudo wget -O /usr/lib/modules-load.d/ntsync.conf https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/sys_cfgs/ntsync.conf
+
+sudo wget -O /etc/security/limits.conf https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/sys_cfgs/limits.conf
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Refresh Repos Again"
+echo
+
+sudo pacman -Syu --noconfirm
+
+echo
+echo "Done!"
+echo
+
 #--------------------------------------#
 # End - Catrina's Post Setup - Midgard #
 #--------------------------------------#
