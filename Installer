@@ -139,15 +139,15 @@ echo
 echo "Apply Optimsations"
 echo
 
-sudo wget -O /etc/sysctl.d/70-aleph-settings.conf https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/sys_cfgs/70-aleph-settings.conf
+sudo wget -O /etc/sysctl.d/70-aleph-settings.conf https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/sys_cfgs/sysctl.d/70-aleph-settings.conf
 
-sudo wget -O /etc/sysctl.d/99-splitlock.conf https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/sys_cfgs/99-splitlock.conf
+sudo wget -O /etc/sysctl.d/99-splitlock.conf https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/sys_cfgs/sysctl.d/99-splitlock.conf
 
 sudo sysctl --system
 
-sudo wget -O /etc/systemd/zram-generator.conf https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/sys_cfgs/zram-generator.conf
+sudo wget -O /etc/systemd/zram-generator.conf https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/sys_cfgs/systemd/zram-generator.conf
 
-sudo wget -O /etc/udev/rules.d/30-zram.rules https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/sys_cfgs/30-zram.rules
+sudo wget -O /etc/udev/rules.d/30-zram.rules https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/sys_cfgs/rules.d/30-zram.rules
 
 sudo systemctl daemon-reload
 
@@ -155,13 +155,17 @@ sudo systemctl start /dev/zram0
 
 sudo systemctl enable --now scx_loader.service
 
-sudo wget -O /etc/scx_loader.toml https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/sys_cfgs/scx_loader.toml
+sudo wget -O /etc/scx_loader.toml https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/sys_cfgs/scx_loader/scx_loader.toml
 
 sudo systemctl restart scx_loader.service
 
-sudo wget -O /usr/lib/modules-load.d/ntsync.conf https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/sys_cfgs/ntsync.conf
+sudo wget -O /etc/security/limits.conf https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/sys_cfgs/security/limits.conf
 
-sudo wget -O /etc/security/limits.conf https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/sys_cfgs/limits.conf
+sudo wget -O /etc/systemd/system.conf.d/10-limits.conf https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/sys_cfgs/systemd/system/10-limits.conf
+
+sudo wget -O /etc/systemd/user.conf.d/10-limits.conf https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/sys_cfgs/systemd/user/10-limits.conf
+
+sudo wget -O /usr/lib/modules-load.d/ntsync.conf https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/sys_cfgs/modules-load.d/ntsync.conf
 
 echo
 echo "Done!"
