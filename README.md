@@ -1,16 +1,23 @@
 <div align="center">
-Cosmic DE For EndeavourOS.
+Cosmic DE Gaming Set Up For EndeavourOS.
 </div>
 _____________________________________________________________________________________________________________________
 
-## Step 1: Install:
+## Step 1: Install Cosmic DE With Minimal OOTB Setup With Gaming Stuff: (Run This If You Installed With No Desktop)
 
 ```shell
 curl -fsSL https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/Installer | sh
 ```
 _____________________________________________________________________________________________________________________
 
-## Step 2: Setup Secondary Drive:
+## Step 2: Optimise Your System For Gaming: (RECOMMENDED)
+
+```shell
+curl -fsSL https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/Optimise | sh
+```
+_____________________________________________________________________________________________________________________
+
+## Step 3: Setup Secondary Drive:
 
 ```shell
 sudo mkdir /mnt/games
