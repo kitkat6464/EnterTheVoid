@@ -5,6 +5,16 @@
 #----------------------------------------#
 
 echo
+echo "Refresh Repos"
+echo
+
+sudo pacman -Syu --noconfirm
+
+echo
+echo "Done!"
+echo
+
+echo
 echo "Install System Tools"
 echo
 
