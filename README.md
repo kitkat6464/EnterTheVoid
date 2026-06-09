@@ -6,21 +6,21 @@ ________________________________________________________________________________
 ## Step 1: Install Cosmic DE With Minimal Set Of Apps: (Run This If You Installed With No Desktop)
 
 ```shell
-curl -fsSL https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/Installer | sh
+curl -fsSL https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/01-Desktop | sh
 ```
 _____________________________________________________________________________________________________________________
 
 ## Step 2: Install Gaming Essential Like Steam, GameScope, ScopeBuddy, and Mango Hud: (Install if You Want Gaming)
 
 ```shell
-curl -fsSL https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/Gaming | sh
+curl -fsSL https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/02-Gaming | sh
 ```
 _____________________________________________________________________________________________________________________
 
 ## Step 3: Optimise Your System For Gaming: (RECOMMENDED)
 
 ```shell
-curl -fsSL https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/Optimise | sh
+curl -fsSL https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/03-Optimise | sh
 ```
 _____________________________________________________________________________________________________________________
 
