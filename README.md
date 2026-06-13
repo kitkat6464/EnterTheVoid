@@ -24,7 +24,7 @@ curl -fsSL https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/mi
 ```
 _____________________________________________________________________________________________________________________
 
-## Step 4: Optimise Your System For Gaming: (Optional)
+## Step 4: Setup VM Host Tools (Optional)
 
 ```shell
 curl -fsSL https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/04-VM | sh
