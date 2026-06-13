@@ -73,6 +73,23 @@ echo "Done!"
 echo
 
 echo
+echo "Add QoL"
+echo
+
+PKGS=(
+	'plymouth'
+)
+
+for PKG in "${PKGS[@]}"; do
+	echo "INSTALLING: ${PKG}"
+	sudo pacman -S "$PKG" --noconfirm
+done
+
+echo
+echo "Done!"
+echo
+
+echo
 echo "Refresh Repos Again"
 echo
 
