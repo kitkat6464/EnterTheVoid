@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+
+#----------------------------------------#
+# Start - Catrina's Post Setup - Midgard #
+#----------------------------------------#
+
+echo
+echo "Refresh Repos"
+echo
+
+sudo pacman -Syu --noconfirm
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Install Virt Manager and QEMU"
+echo
+
+PKGS=(
+	'qemu-full'
+	'virt-manager'
+)
+
+for PKG in "${PKGS[@]}"; do
+	echo "INSTALLING: ${PKG}"
+	sudo pacman -S "$PKG" --noconfirm
+done
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Refresh Repos Again"
+echo
+
+sudo pacman -Syu --noconfirm
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Configure VM Host"
+echo
+
+echo 'firewall_backend = "iptables"' | sudo tee -a /etc/libvirt/network.conf
+sudo usermod -aG libvirt $USER
+systemctl enable --now libvirtd.service
+systemctl enable --now libvirtd.socket
+sudo virsh net-autostart default
+
+echo
+echo "Done!"
+echo
+
+#--------------------------------------#
+# End - Catrina's Post Setup - Midgard #
+#--------------------------------------#

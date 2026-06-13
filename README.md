@@ -24,7 +24,14 @@ curl -fsSL https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/mi
 ```
 _____________________________________________________________________________________________________________________
 
-## Step 4: Setup Secondary Drive:
+## Step 4: Optimise Your System For Gaming: (Optional)
+
+```shell
+curl -fsSL https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/midgard/04-VM | sh
+```
+_____________________________________________________________________________________________________________________
+
+## Step 5: Setup Secondary Drive:
 
 ```shell
 sudo mkdir /mnt/games
