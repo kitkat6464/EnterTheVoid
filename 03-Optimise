@@ -63,7 +63,7 @@ sudo systemctl start /dev/zram0
 
 sudo systemctl enable --now scx_loader.service
 
-sudo wget -O /etc/scx_loader.toml https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/marchived/sys_cfgs/scx_loader/scx_loader.toml
+sudo wget -O /etc/scx_loader.toml https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/archived/sys_cfgs/scx_loader/scx_loader.toml
 
 sudo systemctl restart scx_loader.service
 
