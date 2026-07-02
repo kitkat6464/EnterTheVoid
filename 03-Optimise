@@ -53,13 +53,10 @@ sudo wget -O /etc/sysctl.d/99-splitlock.conf https://raw.githubusercontent.com/k
 sudo sysctl --system
 
 sudo wget -O /etc/systemd/zram-generator.conf https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/archived/sys_cfgs/systemd/zram-generator.conf
-
 sudo wget -O /etc/udev/rules.d/30-zram.rules https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/archived/sys_cfgs/rules.d/30-zram.rules
 
 sudo systemctl daemon-reload
-
 sudo systemctl start /dev/zram0
-
 sudo systemctl enable --now scx_loader.service
 
 sudo wget -O /etc/scx_loader.toml https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/archived/sys_cfgs/scx_loader/scx_loader.toml
@@ -77,6 +74,7 @@ sudo wget -O /etc/systemd/system.conf.d/00-timeout.conf https://raw.githubuserco
 sudo wget -O /etc/systemd/user.conf.d/00-timeout.conf https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/archived/sys_cfgs/systemd/00-timeout.conf
 
 sudo wget -O /usr/lib/modules-load.d/ntsync.conf https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/archived/sys_cfgs/modules-load.d/ntsync.conf
+sudo wget -O /usr/lib/udev/rules.d/99-ntsync.rules https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/archived/sys_cfgs/rules.d/99-ntsync.rules
 
 echo
 echo "Done!"
