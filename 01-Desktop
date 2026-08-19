@@ -15,6 +15,45 @@ echo "Done!"
 echo
 
 echo
+echo "Install Cosmic DE"
+echo
+
+PKGS=(
+	'cosmic'
+	'gnome-keyring'
+	'xdg-desktop-portal-gtk'
+)
+
+for PKG in "${PKGS[@]}"; do
+	echo "INSTALLING: ${PKG}"
+	sudo pacman -S "$PKG" --noconfirm
+done
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Set Graphical Target"
+echo
+
+sudo systemctl set-default graphical.target
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Enable Cosmic Greeter"
+echo
+
+sudo systemctl enable cosmic-greeter.service
+
+echo
+echo "Done!"
+echo
+
+echo
 echo "Install Apps"
 echo
 
