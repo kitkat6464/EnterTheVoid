@@ -19,6 +19,7 @@ echo "Install Gnome Apps"
 echo
 
 PKGS=(
+	'vlc'
 	'loupe'
 	'papers'
 	'gnome-text-editor'
@@ -51,6 +52,7 @@ PKGS=(
 	'kitty'
 	'bazaar'
 	'fastfetch'
+	'vlc-plugins-all'
 )
 
 for PKG in "${PKGS[@]}"; do
