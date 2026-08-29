@@ -15,7 +15,36 @@ echo "Done!"
 echo
 
 echo
-echo "Install Apps"
+echo "Install Gnome Apps"
+echo
+
+PKGS=(
+	'loupe'
+	'papers'
+	'gnome-text-editor'
+)
+
+for PKG in "${PKGS[@]}"; do
+	echo "INSTALLING: ${PKG}"
+	sudo pacman -S "$PKG" --noconfirm
+done
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Set Default Apps"
+echo
+
+sudo curl -Lo $HOME/.config https://raw.githubusercontent.com/kitkat6464/my_configs/refs/heads/niri/.config/mimeapps.list
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Install Extra Apps"
 echo
 
 PKGS=(
