@@ -15,17 +15,7 @@ echo "Done!"
 echo
 
 echo
-echo "Install SDDM"
-echo
-
-sudo pacman -S --noconfirm sddm
-
-echo
-echo "Done!"
-echo
-
-echo
-echo "Set Graphical Target"
+echo "Enable Graphical Target"
 echo
 
 sudo systemctl set-default graphical.target
@@ -35,10 +25,51 @@ echo "Done!"
 echo
 
 echo
-echo "Enable SDDM"
+echo "Install GreetD Regreet"
 echo
 
-sudo systemctl enable sddm
+sudo pacman -S --noconfirm greetd-regreet
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Configure GreetD Regreet Niri"
+echo
+
+sudo bash -c 'cat <<EOF > /etc/greetd/niri.kdl
+
+spawn-sh-at-startup "regreet; niri msg action quit --skip-confirmation"
+hotkey-overlay {
+    skip-at-startup
+}
+EOF'
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Configure GreetD Regreet"
+echo
+
+sudo bash -c 'cat <<EOF > /etc/greetd/config.conf
+
+[default_session]
+command = "dbus-run-session niri --config /etc/greetd/niri.kdl"
+user = "greeter"
+EOF'
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Enable GreetD Regreet"
+echo
+
+sudo systemctl enable greetd
 
 echo
 echo "Done!"
@@ -69,19 +100,10 @@ echo
 echo "Install Noctalia"
 echo
 
-sudo pacman -S --noconfirm noctalia
-
-echo
-echo "Done!"
-echo
-
-echo
-echo "Install Noctalia Core Deps"
-echo
-
 PKGS=(
 	'ddcutil'
 	'cliphist'
+	'noctalia'
 )
 
 for PKG in "${PKGS[@]}"; do
@@ -94,7 +116,7 @@ echo "Done!"
 echo
 
 echo
-echo "Install Theme"
+echo "Install Theming"
 echo
 
 PKGS=(
