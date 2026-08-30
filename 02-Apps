@@ -38,7 +38,7 @@ echo
 echo "Set Default Apps"
 echo
 
-sudo curl -Lo $HOME/.config/mimeapps.list https://raw.githubusercontent.com/kitkat6464/EnterTheVoid/refs/heads/niri/.config/mimeapps.list
+curl -Lo $HOME/.config/mimeapps.list https://raw.githubusercontent.com/kitkat6464/EnterTheVoid/refs/heads/niri/.config/mimeapps.list
 
 echo
 echo "Done!"
