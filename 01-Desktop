@@ -25,58 +25,27 @@ echo "Done!"
 echo
 
 echo
-echo "Install GreetD Regreet"
+echo "Install SDDM"
 echo
 
-sudo pacman -S --noconfirm greetd-regreet
-
-echo
-echo "Done!"
-echo
-
-echo
-echo "Configure GreetD Regreet Niri"
-echo
-
-sudo bash -c 'cat <<EOF > /etc/greetd/niri.kdl
-
-spawn-sh-at-startup "regreet; niri msg action quit --skip-confirmation"
-hotkey-overlay {
-    skip-at-startup
-}
-EOF'
+sudo pacman -S --noconfirm sddm
 
 echo
 echo "Done!"
 echo
 
 echo
-echo "Configure GreetD Regreet"
+echo "Enable SDDM"
 echo
 
-sudo bash -c 'cat <<EOF > /etc/greetd/config.conf
-
-[default_session]
-command = "dbus-run-session niri --config /etc/greetd/niri.kdl"
-user = "greeter"
-EOF'
+sudo systemctl enable sddm
 
 echo
 echo "Done!"
 echo
 
 echo
-echo "Enable GreetD Regreet"
-echo
-
-sudo systemctl enable greetd
-
-echo
-echo "Done!"
-echo
-
-echo
-echo "Install Niri and Deps"
+echo "Install Niri"
 echo
 
 PKGS=(
