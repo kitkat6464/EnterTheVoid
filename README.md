@@ -1,44 +1,28 @@
 <div align="center">
 Niri With Noctalia Set Up For EndeavourOS.
 </div>
+
+> [!IMPORTANT]
+> READ INSTALLER FILE TO SEE WHAT GETS INSTALLED. Fork This Repo and Remove Stuff You Don't Need Or If You Want To Add Something.
+
 _____________________________________________________________________________________________________________________
 
 ## Step 1: Install Niri With Noctalia: (Run This If You Installed With No Desktop)
 
 ```shell
-curl -fsSL https://raw.githubusercontent.com/kitkat6464/EnterTheVoid/refs/heads/niri/01-Desktop | sh
+curl -fsSL https://raw.githubusercontent.com/kitkat6464/EnterTheVoid/refs/heads/niri/Required-Setup | sh
 ```
+
 _____________________________________________________________________________________________________________________
 
-## Step 2: Install Minimal Set Of Apps: (OPTIONAL)
+## Step 2: Setup VM Host Tools (OPTIONAL)
 
 ```shell
-curl -fsSL https://raw.githubusercontent.com/kitkat6464/EnterTheVoid/refs/heads/niri/02-Apps | sh
+curl -fsSL https://raw.githubusercontent.com/kitkat6464/EnterTheVoid/refs/heads/niri/Optional-VM | sh
 ```
 _____________________________________________________________________________________________________________________
 
-## Step 3: Install Gaming Essentials Like Steam, GameScope, ScopeBuddy, and MangoHud: (Install if You Want Gaming)
-
-```shell
-curl -fsSL https://raw.githubusercontent.com/kitkat6464/EnterTheVoid/refs/heads/niri/03-Gaming | sh
-```
-_____________________________________________________________________________________________________________________
-
-## Step 4: Optimise Your System For Gaming: (RECOMMENDED)
-
-```shell
-curl -fsSL https://raw.githubusercontent.com/kitkat6464/EnterTheVoid/refs/heads/niri/04-Optimise | sh
-```
-_____________________________________________________________________________________________________________________
-
-## Step 5: Setup VM Host Tools (OPTIONAL)
-
-```shell
-curl -fsSL https://raw.githubusercontent.com/kitkat6464/EnterTheVoid/refs/heads/niri/05-VM | sh
-```
-_____________________________________________________________________________________________________________________
-
-## Step 6: Setup Secondary Drive:
+## Step 3: Setup Secondary Drive:
 
 ```shell
 sudo mkdir /mnt/games

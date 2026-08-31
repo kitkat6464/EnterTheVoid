@@ -1,0 +1,290 @@
+#!/usr/bin/env bash
+
+#---------------------------------------------------#
+# Start - Catrina's Post Setup                      #
+#---------------------------------------------------#
+
+echo
+echo "Refresh Repos"
+echo
+
+sudo pacman -Syu --noconfirm
+
+echo
+echo "Done!"
+echo
+
+#---------------------------------------------------#
+# Section 1 - Login Manager and Tiling Manger Setup #
+# Section 2 - Application's and Gaming Install      #
+# Section 3 - System Optimsations                   #
+#---------------------------------------------------#
+
+#---------------------------------------------------#
+# Section 1 - Login Manager and Tiling Manger Setup #
+#---------------------------------------------------#
+
+echo
+echo "Enable Graphical Target"
+echo
+
+sudo systemctl set-default graphical.target
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Install SDDM"
+echo
+
+sudo pacman -S --noconfirm sddm
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Enable SDDM"
+echo
+
+sudo systemctl enable sddm
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Install Niri"
+echo
+
+PKGS=(
+	'niri'
+	'gnome-keyring'
+	'xwayland-satellite'
+	'xdg-desktop-portal-gtk'
+	'xdg-desktop-portal-gnome'
+)
+
+for PKG in "${PKGS[@]}"; do
+	echo "INSTALLING: ${PKG}"
+	sudo pacman -S "$PKG" --noconfirm
+done
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Install Noctalia"
+echo
+
+PKGS=(
+	'ddcutil'
+	'cliphist'
+	'noctalia'
+)
+
+for PKG in "${PKGS[@]}"; do
+	echo "INSTALLING: ${PKG}"
+	sudo pacman -S "$PKG" --noconfirm
+done
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Install Theming"
+echo
+
+PKGS=(
+	'adw-gtk-theme'
+)
+
+for PKG in "${PKGS[@]}"; do
+	echo "INSTALLING: ${PKG}"
+	sudo pacman -S "$PKG" --noconfirm
+done
+
+echo
+echo "Done!"
+echo
+
+#---------------------------------------------------#
+# Section 1 - Login Manager and Tiling Manger Setup #
+#---------------------------------------------------#
+
+#---------------------------------------------------#
+# Section 2 - Application's and Gaming Install      #
+#---------------------------------------------------#
+
+echo
+echo "Install Gnome Apps"
+echo
+
+PKGS=(
+	'vlc'
+	'loupe'
+	'papers'
+	'gnome-calendar'
+	'gnome-text-editor'
+)
+
+for PKG in "${PKGS[@]}"; do
+	echo "INSTALLING: ${PKG}"
+	sudo pacman -S "$PKG" --noconfirm
+done
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Set Default Apps"
+echo
+
+curl -Lo $HOME/.config/mimeapps.list https://raw.githubusercontent.com/kitkat6464/EnterTheVoid/refs/heads/niri/.config/mimeapps.list
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Install Extra Apps"
+echo
+
+PKGS=(
+	'kitty'
+	'bazaar'
+	'fastfetch'
+	'vlc-plugins-all'
+)
+
+for PKG in "${PKGS[@]}"; do
+	echo "INSTALLING: ${PKG}"
+	sudo pacman -S "$PKG" --noconfirm
+done
+
+echo
+echo "Done!"
+echo
+
+
+echo
+echo "Install Game Stuff"
+echo
+
+PKGS=(
+	'steam'
+	'mangohud'
+	'gamescope'
+	'umu-launcher'
+	'lib32-mangohud'
+)
+
+for PKG in "${PKGS[@]}"; do
+	echo "INSTALLING: ${PKG}"
+	sudo pacman -S "$PKG" --noconfirm
+done
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Install ScopeBuddy and wlr-randr"
+echo
+
+sudo pacman -S wlr-randr --noconfirm
+sudo wget -O /usr/local/bin/scopebuddy https://raw.githubusercontent.com/OpenGamingCollective/ScopeBuddy/refs/tags/1.5.0/bin/scopebuddy
+sudo chmod +x /usr/local/bin/scopebuddy
+sudo ln -s scopebuddy /usr/local/bin/scb
+
+echo
+echo "Done!"
+echo
+
+#---------------------------------------------------#
+# Section 2 - Application's and Gaming Install      #
+#---------------------------------------------------#
+
+#---------------------------------------------------#
+# Section 3 - System Optimsations                   #
+#---------------------------------------------------#
+
+echo
+echo "Install System Tools"
+echo
+
+PKGS=(
+	'scx-tools'
+	'scx-scheds'
+	'zram-generator'
+)
+
+for PKG in "${PKGS[@]}"; do
+	echo "INSTALLING: ${PKG}"
+	sudo pacman -S "$PKG" --noconfirm
+done
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Apply Optimsations"
+echo
+
+sudo wget -O /etc/sysctl.d/70-aleph-settings.conf https://raw.githubusercontent.com/kitkat6464/EnterTheVoid/refs/heads/niri/sys_cfgs/sysctl.d/70-aleph-settings.conf
+sudo wget -O /etc/sysctl.d/99-splitlock.conf https://raw.githubusercontent.com/kitkat6464/EnterTheVoid/refs/heads/niri/sys_cfgs/sysctl.d/99-splitlock.conf
+sudo sysctl --system
+
+sudo wget -O /etc/systemd/zram-generator.conf https://raw.githubusercontent.com/kitkat6464/EnterTheVoid/refs/heads/niri/sys_cfgs/systemd/zram-generator.conf
+sudo wget -O /etc/udev/rules.d/30-zram.rules https://raw.githubusercontent.com/kitkat6464/EnterTheVoid/refs/heads/niri/sys_cfgs/rules.d/30-zram.rules
+sudo systemctl daemon-reload
+sudo systemctl start /dev/zram0
+sudo systemctl enable --now scx_loader.service
+
+sudo wget -O /etc/scx_loader.toml https://raw.githubusercontent.com/kitkat6464/EnterTheVoid/refs/heads/niri/sys_cfgs/scx_loader/scx_loader.toml
+sudo systemctl restart scx_loader.service
+
+sudo wget -O /etc/security/limits.conf https://raw.githubusercontent.com/kitkat6464/EnterTheVoid/refs/heads/niri/sys_cfgs/security/limits.conf
+
+sudo mkdir /etc/systemd/system.conf.d
+sudo mkdir /etc/systemd/user.conf.d
+sudo wget -O /etc/systemd/system.conf.d/10-limits.conf https://raw.githubusercontent.com/kitkat6464/EnterTheVoid/refs/heads/niri/sys_cfgs/systemd/system/10-limits.conf
+sudo wget -O /etc/systemd/user.conf.d/10-limits.conf https://raw.githubusercontent.com/kitkat6464/EnterTheVoid/refs/heads/niri/sys_cfgs/systemd/user/10-limits.conf
+sudo wget -O /etc/systemd/system.conf.d/00-timeout.conf https://raw.githubusercontent.com/kitkat6464/EnterTheVoid/refs/heads/niri/sys_cfgs/systemd/00-timeout.conf
+sudo wget -O /etc/systemd/user.conf.d/00-timeout.conf https://raw.githubusercontent.com/kitkat6464/EnterTheVoid/refs/heads/niri/sys_cfgs/systemd/00-timeout.conf
+
+sudo wget -O /usr/lib/modules-load.d/ntsync.conf https://raw.githubusercontent.com/kitkat6464/EnterTheVoid/refs/heads/niri/sys_cfgs/modules-load.d/ntsync.conf
+sudo wget -O /usr/lib/udev/rules.d/99-ntsync.rules https://raw.githubusercontent.com/kitkat6464/EnterTheVoid/refs/heads/niri/sys_cfgs/rules.d/99-ntsync.rules
+
+echo
+echo "Done!"
+echo
+
+#---------------------------------------------------#
+# Section 3 - System Optimsations                   #
+#---------------------------------------------------#
+
+#---------------------------------------------------#
+# Section 1 - Login Manager and Tiling Manger Setup #
+# Section 2 - Application's and Gaming Install      #
+# Section 3 - System Optimsations                   #
+#---------------------------------------------------#
+
+echo
+echo "Refresh Repos Again"
+echo
+
+sudo pacman -Syu --noconfirm
+
+echo
+echo "Done!"
+echo
+
+#---------------------------------------------------#
+# End - Catrina's Post Setup                        #
+#---------------------------------------------------#
