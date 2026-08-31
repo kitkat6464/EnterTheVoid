@@ -10,7 +10,7 @@ ________________________________________________________________________________
 ## Step 1: Install Niri With Noctalia: (Run This If You Installed With No Desktop)
 
 ```shell
-curl -fsSL https://raw.githubusercontent.com/kitkat6464/EnterTheVoid/refs/heads/niri/Required-Setup | sh
+curl -fsSL https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/Required-Setup | sh
 ```
 
 _____________________________________________________________________________________________________________________
@@ -18,7 +18,7 @@ ________________________________________________________________________________
 ## Step 2: Setup VM Host Tools (OPTIONAL)
 
 ```shell
-curl -fsSL https://raw.githubusercontent.com/kitkat6464/EnterTheVoid/refs/heads/niri/Optional-VM | sh
+curl -fsSL https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/Optional-VM | sh
 ```
 _____________________________________________________________________________________________________________________
 
