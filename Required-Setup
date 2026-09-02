@@ -4,6 +4,17 @@
 # Start - Catrina's Post Setup                      #
 #---------------------------------------------------#
 
+#---------------------------------------------------#
+# Section 0 - Pre Flight                            #
+# Section 1 - Login Manager and Tiling Manger Setup #
+# Section 2 - Application's and Gaming Install      #
+# Section 3 - System Optimsations                   #
+#---------------------------------------------------#
+
+#---------------------------------------------------#
+# Section 0 - Pre Flight                            #
+#---------------------------------------------------#
+
 echo
 echo "Refresh Repos"
 echo
@@ -13,16 +24,6 @@ sudo pacman -Syu --noconfirm
 echo
 echo "Done!"
 echo
-
-#---------------------------------------------------#
-# Section 1 - Login Manager and Tiling Manger Setup #
-# Section 2 - Application's and Gaming Install      #
-# Section 3 - System Optimsations                   #
-#---------------------------------------------------#
-
-#---------------------------------------------------#
-# Section 1 - Login Manager and Tiling Manger Setup #
-#---------------------------------------------------#
 
 echo
 echo "Enable Graphical Target"
@@ -34,22 +35,15 @@ echo
 echo "Done!"
 echo
 
+#---------------------------------------------------#
+# Section 1 - Login Manager and Tiling Manger Setup #
+#---------------------------------------------------#
+
 echo
-echo "Install Niri"
+echo "Install niri"
 echo
 
-PKGS=(
-	'niri'
-	'gnome-keyring'
-	'xwayland-satellite'
-	'xdg-desktop-portal-gtk'
-	'xdg-desktop-portal-gnome'
-)
-
-for PKG in "${PKGS[@]}"; do
-	echo "INSTALLING: ${PKG}"
-	sudo pacman -S "$PKG" --noconfirm
-done
+sudo pacman -S --noconfirm niri
 
 echo
 echo "Done!"
@@ -69,18 +63,17 @@ echo
 echo "Configure greetd regreet"
 echo
 
+sudo mkdir -p /etc/greetd
+sudo chown -R greeter:greeter /etc/greetd/
+sudo usermod -aG video,render greeter
 sudo cp -a /etc/greetd/config.toml /etc/greetd/config.toml.bak
-sudo wget -O /etc/greetd/config.toml https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/greetd/config.toml
-
 sudo cp -a /etc/greetd/regreet.toml /etc/greetd/regreet.toml.bak
+sudo wget -O /etc/greetd/config.toml https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/greetd/config.toml
 sudo wget -O /etc/greetd/regreet.toml https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/greetd/regreet.toml
-
 sudo wget -O /etc/greetd/niri.kdl https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/greetd/niri.kdl
-
-chown -R greeter:greeter /etc/greetd/
-chmod 644 /etc/greetd/config.toml
-chmod 644 /etc/greetd/regreet.toml
-chmod 644 /etc/greetd/niri.kdl
+sudo chmod 644 /etc/greetd/config.toml
+sudo chmod 644 /etc/greetd/regreet.toml
+sudo chmod 644 /etc/greetd/niri.kdl
 
 echo
 echo "Done!"
@@ -97,13 +90,42 @@ echo "Done!"
 echo
 
 echo
+echo "Install niri Dependacies"
+echo
+
+PKGS=(
+	'gnome-keyring'
+	'xwayland-satellite'
+	'xdg-desktop-portal-gtk'
+	'xdg-desktop-portal-gnome'
+)
+
+for PKG in "${PKGS[@]}"; do
+	echo "INSTALLING: ${PKG}"
+	sudo pacman -S "$PKG" --noconfirm
+done
+
+echo
+echo "Done!"
+echo
+
+echo
 echo "Install Noctalia"
+echo
+
+sudo pacman -S --noconfirm noctalia
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Install Noctalia Dependacies"
 echo
 
 PKGS=(
 	'ddcutil'
 	'cliphist'
-	'noctalia'
 )
 
 for PKG in "${PKGS[@]}"; do
@@ -258,30 +280,25 @@ echo
 echo "Apply Optimsations"
 echo
 
-sudo wget -O /etc/sysctl.d/70-aleph-settings.conf https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/sysctl.d/70-aleph-settings.conf
-sudo wget -O /etc/sysctl.d/99-splitlock.conf https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/sysctl.d/99-splitlock.conf
-sudo sysctl --system
-
-sudo wget -O /etc/systemd/zram-generator.conf https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/systemd/zram-generator.conf
-sudo wget -O /etc/udev/rules.d/30-zram.rules https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/rules.d/30-zram.rules
-sudo systemctl daemon-reload
-sudo systemctl start /dev/zram0
-sudo systemctl enable --now scx_loader.service
-
-sudo wget -O /etc/scx_loader.toml https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/scx_loader/scx_loader.toml
-sudo systemctl restart scx_loader.service
-
-sudo wget -O /etc/security/limits.conf https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/security/limits.conf
-
 sudo mkdir /etc/systemd/system.conf.d
 sudo mkdir /etc/systemd/user.conf.d
+sudo wget -O /etc/sysctl.d/70-aleph-settings.conf https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/sysctl.d/70-aleph-settings.conf
+sudo wget -O /etc/sysctl.d/99-splitlock.conf https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/sysctl.d/99-splitlock.conf
+sudo wget -O /etc/systemd/zram-generator.conf https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/systemd/zram-generator.conf
+sudo wget -O /etc/udev/rules.d/30-zram.rules https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/rules.d/30-zram.rules
+sudo wget -O /etc/scx_loader.toml https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/scx_loader/scx_loader.toml
+sudo wget -O /etc/security/limits.conf https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/security/limits.conf
 sudo wget -O /etc/systemd/system.conf.d/10-limits.conf https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/systemd/system/10-limits.conf
 sudo wget -O /etc/systemd/user.conf.d/10-limits.conf https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/systemd/user/10-limits.conf
 sudo wget -O /etc/systemd/system.conf.d/00-timeout.conf https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/systemd/00-timeout.conf
 sudo wget -O /etc/systemd/user.conf.d/00-timeout.conf https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/systemd/00-timeout.conf
-
 sudo wget -O /usr/lib/modules-load.d/ntsync.conf https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/modules-load.d/ntsync.conf
 sudo wget -O /usr/lib/udev/rules.d/99-ntsync.rules https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/rules.d/99-ntsync.rules
+sudo sysctl --system
+sudo systemctl daemon-reload
+sudo systemctl start /dev/zram0
+sudo systemctl enable --now scx_loader.service
+sudo systemctl restart scx_loader.service
 
 echo
 echo "Done!"
