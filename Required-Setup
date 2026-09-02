@@ -99,6 +99,8 @@ echo "Install Theming"
 echo
 
 PKGS=(
+	'qt6ct'
+	'nwg-look'
 	'adw-gtk-theme'
 )
 
