@@ -1,5 +1,6 @@
 [GTK]
-application_preference = "prefer-dark"
+application_prefer_dark_theme = true
+theme_name = "Adwaita-dark"
 
 [commands]
 reboot = [ "systemctl", "reboot" ]
