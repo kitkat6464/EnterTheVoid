@@ -35,20 +35,41 @@ echo "Done!"
 echo
 
 echo
-echo "Install SDDM"
+echo "Install Cage"
 echo
 
-sudo pacman -S --noconfirm sddm
+sudo pacman -S --noconfirm cage
 
 echo
 echo "Done!"
 echo
 
 echo
-echo "Enable SDDM"
+echo "Install greetd regreet"
 echo
 
-sudo systemctl enable sddm
+sudo pacman -S --noconfirm greetd-regreet
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Configure greetd regreet"
+echo
+
+sudo cp -a /etc/greetd/config.toml /etc/greetd/config.toml.bak
+sudo wget -O /etc/greetd/config.toml https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/greetd/config.toml
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Enable greetd"
+echo
+
+sudo systemctl enable greetd
 
 echo
 echo "Done!"
