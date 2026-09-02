@@ -35,10 +35,21 @@ echo "Done!"
 echo
 
 echo
-echo "Install Cage"
+echo "Install Niri"
 echo
 
-sudo pacman -S --noconfirm cage
+PKGS=(
+	'niri'
+	'gnome-keyring'
+	'xwayland-satellite'
+	'xdg-desktop-portal-gtk'
+	'xdg-desktop-portal-gnome'
+)
+
+for PKG in "${PKGS[@]}"; do
+	echo "INSTALLING: ${PKG}"
+	sudo pacman -S "$PKG" --noconfirm
+done
 
 echo
 echo "Done!"
@@ -60,6 +71,7 @@ echo
 
 sudo cp -a /etc/greetd/config.toml /etc/greetd/config.toml.bak
 sudo wget -O /etc/greetd/config.toml https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/greetd/config.toml
+sudo wget -O /etc/greetd/niri.kdl https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/greetd/niri.kdl
 
 echo
 echo "Done!"
@@ -70,27 +82,6 @@ echo "Enable greetd"
 echo
 
 sudo systemctl enable greetd
-
-echo
-echo "Done!"
-echo
-
-echo
-echo "Install Niri"
-echo
-
-PKGS=(
-	'niri'
-	'gnome-keyring'
-	'xwayland-satellite'
-	'xdg-desktop-portal-gtk'
-	'xdg-desktop-portal-gnome'
-)
-
-for PKG in "${PKGS[@]}"; do
-	echo "INSTALLING: ${PKG}"
-	sudo pacman -S "$PKG" --noconfirm
-done
 
 echo
 echo "Done!"
