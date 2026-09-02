@@ -31,6 +31,15 @@
         }
     }
 
+    /* Enable blur on noctalia's window switcher and disable xray. */
+    layer-rule {
+        match namespace="noctalia-window-switcher"
+        background-effect {
+          blur true
+          xray false
+        }
+    }
+
     // if you use steam you will probably like these
     window-rule {
         match app-id="steam"
