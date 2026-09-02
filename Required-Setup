@@ -71,7 +71,16 @@ echo
 
 sudo cp -a /etc/greetd/config.toml /etc/greetd/config.toml.bak
 sudo wget -O /etc/greetd/config.toml https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/greetd/config.toml
+
+sudo cp -a /etc/greetd/regreet.toml /etc/greetd/regreet.toml.bak
+sudo wget -O /etc/greetd/regreet.toml https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/greetd/regreet.toml
+
 sudo wget -O /etc/greetd/niri.kdl https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/greetd/niri.kdl
+
+chown -R greeter:greeter /etc/greetd/
+chmod 644 /etc/greetd/config.toml
+chmod 644 /etc/greetd/regreet.toml
+chmod 644 /etc/greetd/niri.kdl
 
 echo
 echo "Done!"

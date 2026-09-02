@@ -1,0 +1,6 @@
+[GTK]
+application_preference = "prefer-dark"
+
+[commands]
+reboot = [ "systemctl", "reboot" ]
+poweroff = [ "systemctl", "poweroff" ]
