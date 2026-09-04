@@ -1,4 +1,23 @@
-spawn-sh-at-startup "regreet; niri msg action quit --skip-confirmation"
 hotkey-overlay {
     skip-at-startup
 }
+
+input {
+    keyboard {
+        xkb {
+            //If you want to overwrite your keyboard layout,
+            // uncomment the line below and change the layout accordingly.
+            //layout "us" // Use the American keyboard layout
+        }
+        numlock // Enable numlock on startup
+    }
+}
+
+output "DP-2" {
+    mode "1920x1080@60.000"
+    scale 1
+    position x=0 y=0
+    focus-at-startup
+}
+
+spawn-sh-at-startup "regreet; niri msg action quit --skip-confirmation"
