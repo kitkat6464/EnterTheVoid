@@ -22,6 +22,11 @@ binds {
     Mod+Shift+Q                         hotkey-overlay-title="Session Menu: noctalia sessionMenu" { spawn-sh "noctalia msg panel-toggle session"; }
     Alt+Tab                             hotkey-overlay-title="Window Switcher: noctalia msg window-switcher" { spawn-sh "noctalia msg window-switcher"; }
 
+    // --- Noctalia Screenshots ---
+    CTRL+Shift+1                        hotkey-overlay-title="Fullscreen Screenshot: noctalia screenshot-fullscreen" { spawn-sh "noctalia msg screenshot-fullscreen"; }
+    CTRL+Shift+2                        hotkey-overlay-title="Region Screenshot: noctalia screenshot-region" { spawn-sh "noctalia msg screenshot-region"; }
+    CTRL+Shift+3                        { screenshot-window; }
+
     // ─── Media Controls ───
     XF86AudioRaiseVolume                allow-when-locked=true { spawn-sh "noctalia msg volume-up"; }
     XF86AudioLowerVolume                allow-when-locked=true { spawn-sh "noctalia msg volume-down"; }
@@ -140,11 +145,6 @@ binds {
     Mod+Shift+F                         { fullscreen-window; }
     Mod+W                               { toggle-column-tabbed-display; }
     Mod+M                               { maximize-window-to-edges; }
-
-    // ─── Screenshots ───
-    CTRL+Shift+1                        { screenshot; }
-    CTRL+Shift+2                        { screenshot-screen; }
-    CTRL+Shift+3                        { screenshot-window; }
 
     // ─── Emergency Escape Key ───
     // Use this when a fullscreen app blocks your keybinds.
