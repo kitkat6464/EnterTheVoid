@@ -197,6 +197,25 @@ echo "Done!"
 echo
 
 echo
+echo "Set niri Configs"
+echo
+
+mkdir -p ~/.config/niri/cfg
+curl -Lo $HOME/.config/niri/config.kdl https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/.config/niri/config.kdl
+curl -Lo $HOME/.config/niri/cfg/animation.kdl https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/.config/niri/cfg/animation.kdl
+curl -Lo $HOME/.config/niri/cfg/autostart.kdl https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/.config/niri/cfg/autostart.kdl
+curl -Lo $HOME/.config/niri/cfg/display.kdl https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/.config/niri/cfg/display.kdl
+curl -Lo $HOME/.config/niri/cfg/input.kdl https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/.config/niri/cfg/input.kdl
+curl -Lo $HOME/.config/niri/cfg/keybinds.kdl https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/.config/niri/cfg/keybinds.kdl
+curl -Lo $HOME/.config/niri/cfg/layout.kdl https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/.config/niri/cfg/layout.kdl
+curl -Lo $HOME/.config/niri/cfg/misc.kdl https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/.config/niri/cfg/misc.kdl
+curl -Lo $HOME/.config/niri/cfg/rules.kdl https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/.config/niri/cfg/rules.kdl
+
+echo
+echo "Done!"
+echo
+
+echo
 echo "Install Extra Apps"
 echo
 
