@@ -14,12 +14,12 @@ binds {
     Mod+B                               hotkey-overlay-title="Open Browser: Firefox" { spawn "firefox"; }
 
     // --- Noctalia ---
-    Mod+Shift+Return                    hotkey-overlay-title="Open Wallpaper Selector: noctalia wallpaper toggle" { spawn-sh "noctalia msg panel-toggle wallpaper"; }
-    Mod+S                               hotkey-overlay-title="Open Control Center: noctalia controlCenter" { spawn-sh "noctalia msg panel-toggle control-center"; }
-    Mod+Shift+S                         hotkey-overlay-title="Open Settings: noctalia settings" { spawn-sh "noctalia msg settings-toggle"; }
-    Mod+CTRL+Return                     hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "noctalia msg panel-toggle launcher"; }
-    Mod+ALT+L                           hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "noctalia msg session lock"; }
-    Mod+Shift+Q                         hotkey-overlay-title="Session Menu: noctalia sessionMenu" { spawn-sh "noctalia msg panel-toggle session"; }
+    Mod+Shift+Return                    hotkey-overlay-title="Open Wallpaper Selector: noctalia msg wallpaper toggle" { spawn-sh "noctalia msg panel-toggle wallpaper"; }
+    Mod+S                               hotkey-overlay-title="Open Control Center: noctalia msg controlCenter" { spawn-sh "noctalia msg panel-toggle control-center"; }
+    Mod+Shift+S                         hotkey-overlay-title="Open Settings: noctalia msg settings" { spawn-sh "noctalia msg settings-toggle"; }
+    Mod+CTRL+Return                     hotkey-overlay-title="Open App Launcher: noctalia msg launcher" { spawn-sh "noctalia msg panel-toggle launcher"; }
+    Mod+ALT+L                           hotkey-overlay-title="Lock Screen: noctalia msg lock" { spawn-sh "noctalia msg session lock"; }
+    Mod+Shift+Q                         hotkey-overlay-title="Session Menu: noctalia msg sessionMenu" { spawn-sh "noctalia msg panel-toggle session"; }
     Alt+Tab                             hotkey-overlay-title="Window Switcher: noctalia msg window-switcher" { spawn-sh "noctalia msg window-switcher"; }
 
     // --- Noctalia Screenshots ---
