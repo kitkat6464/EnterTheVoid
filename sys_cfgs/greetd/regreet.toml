@@ -1,7 +1,3 @@
 [GTK]
 application_prefer_dark_theme = true
 theme_name = "Adwaita-dark"
-
-[commands]
-reboot = [ "systemctl", "reboot" ]
-poweroff = [ "systemctl", "poweroff" ]

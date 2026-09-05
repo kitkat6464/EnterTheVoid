@@ -2,5 +2,5 @@
 vt = 1
 
 [default_session]
-command = "dbus-run-session niri --config /etc/greetd/niri.kdl"
+command = "dbus-run-session cage -s -mlast -d -- regreet"
 user = "greeter"

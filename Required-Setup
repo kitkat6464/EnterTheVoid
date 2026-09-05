@@ -27,6 +27,16 @@ echo "Done!"
 echo
 
 echo
+echo "Refresh AUR"
+echo
+
+yay -Syu
+
+echo
+echo "Done!"
+echo
+
+echo
 echo "Enable Graphical Target"
 echo
 
@@ -41,64 +51,14 @@ echo
 #---------------------------------------------------#
 
 echo
-echo "Install niri"
-echo
-
-sudo pacman -S --noconfirm niri
-
-echo
-echo "Done!"
-echo
-
-echo
-echo "Install greetd regreet"
-echo
-
-sudo pacman -S --noconfirm greetd-regreet
-
-echo
-echo "Done!"
-echo
-
-echo
-echo "Configure greetd regreet"
-echo
-
-sudo mkdir -p /etc/greetd
-sudo chown -R greeter:greeter /etc/greetd/
-sudo usermod -aG video,render greeter
-sudo cp -a /etc/greetd/config.toml /etc/greetd/config.toml.bak
-sudo cp -a /etc/greetd/regreet.toml /etc/greetd/regreet.toml.bak
-sudo wget -O /etc/greetd/config.toml https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/greetd/config.toml
-sudo wget -O /etc/greetd/regreet.toml https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/greetd/regreet.toml
-sudo wget -O /etc/greetd/niri.kdl https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/greetd/niri.kdl
-sudo chmod 644 /etc/greetd/config.toml
-sudo chmod 644 /etc/greetd/regreet.toml
-sudo chmod 644 /etc/greetd/niri.kdl
-
-echo
-echo "Done!"
-echo
-
-echo
-echo "Enable greetd"
-echo
-
-sudo systemctl enable greetd
-
-echo
-echo "Done!"
-echo
-
-echo
-echo "Install niri Dependacies"
+echo "Install Mango Dependacies"
 echo
 
 PKGS=(
+	'wlr-randr'
 	'gnome-keyring'
-	'xwayland-satellite'
 	'xdg-desktop-portal-gtk'
-	'xdg-desktop-portal-gnome'
+	'xdg-desktop-portal-wlr'
 )
 
 for PKG in "${PKGS[@]}"; do
@@ -111,20 +71,11 @@ echo "Done!"
 echo
 
 echo
-echo "Install Noctalia"
-echo
-
-sudo pacman -S --noconfirm noctalia
-
-echo
-echo "Done!"
-echo
-
-echo
-echo "Install Noctalia Dependacies"
+echo "Install Noctalia and Dependacies"
 echo
 
 PKGS=(
+	'noctalia'
 	'ddcutil'
 	'cliphist'
 )
@@ -139,7 +90,7 @@ echo "Done!"
 echo
 
 echo
-echo "Install Theming"
+echo "Install Theme Tools"
 echo
 
 PKGS=(
@@ -152,6 +103,52 @@ for PKG in "${PKGS[@]}"; do
 	echo "INSTALLING: ${PKG}"
 	sudo pacman -S "$PKG" --noconfirm
 done
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Install Cage and Greetd Regreet"
+echo
+
+PKGS=(
+	'cage'
+	'greetd-regreet'
+)
+
+for PKG in "${PKGS[@]}"; do
+	echo "INSTALLING: ${PKG}"
+	sudo pacman -S "$PKG" --noconfirm
+done
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Configure Greetd Regreet"
+echo
+
+sudo mkdir -p /etc/greetd
+sudo chown -R greeter:greeter /etc/greetd/
+sudo usermod -aG video,render greeter
+sudo cp -a /etc/greetd/config.toml /etc/greetd/config.toml.bak
+sudo cp -a /etc/greetd/regreet.toml /etc/greetd/regreet.toml.bak
+sudo wget -O /etc/greetd/config.toml https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/mango/sys_cfgs/greetd/config.toml
+sudo wget -O /etc/greetd/regreet.toml https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/mango/sys_cfgs/greetd/regreet.toml
+sudo chmod 644 /etc/greetd/config.toml
+sudo chmod 644 /etc/greetd/regreet.toml
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Enable Greetd"
+echo
+
+sudo systemctl enable greetd
 
 echo
 echo "Done!"
@@ -173,6 +170,7 @@ PKGS=(
 	'vlc'
 	'loupe'
 	'papers'
+	'nautilus'
 	'gnome-calendar'
 	'gnome-text-editor'
 )
@@ -181,35 +179,6 @@ for PKG in "${PKGS[@]}"; do
 	echo "INSTALLING: ${PKG}"
 	sudo pacman -S "$PKG" --noconfirm
 done
-
-echo
-echo "Done!"
-echo
-
-echo
-echo "Set Default Apps"
-echo
-
-curl -Lo $HOME/.config/mimeapps.list https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/.config/mimeapps.list
-
-echo
-echo "Done!"
-echo
-
-echo
-echo "Set niri Configs"
-echo
-
-mkdir -p ~/.config/niri/cfg
-curl -Lo $HOME/.config/niri/config.kdl https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/.config/niri/config.kdl
-curl -Lo $HOME/.config/niri/cfg/animation.kdl https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/.config/niri/cfg/animation.kdl
-curl -Lo $HOME/.config/niri/cfg/autostart.kdl https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/.config/niri/cfg/autostart.kdl
-curl -Lo $HOME/.config/niri/cfg/display.kdl https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/.config/niri/cfg/display.kdl
-curl -Lo $HOME/.config/niri/cfg/input.kdl https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/.config/niri/cfg/input.kdl
-curl -Lo $HOME/.config/niri/cfg/keybinds.kdl https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/.config/niri/cfg/keybinds.kdl
-curl -Lo $HOME/.config/niri/cfg/layout.kdl https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/.config/niri/cfg/layout.kdl
-curl -Lo $HOME/.config/niri/cfg/misc.kdl https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/.config/niri/cfg/misc.kdl
-curl -Lo $HOME/.config/niri/cfg/rules.kdl https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/.config/niri/cfg/rules.kdl
 
 echo
 echo "Done!"
@@ -236,7 +205,7 @@ echo "Done!"
 echo
 
 echo
-echo "Install Game Stuff"
+echo "Install Game Apps"
 echo
 
 PKGS=(
@@ -257,10 +226,22 @@ echo "Done!"
 echo
 
 echo
-echo "Install ScopeBuddy and wlr-randr"
+echo "Set Default Configs"
 echo
 
-sudo pacman -S wlr-randr --noconfirm
+mkdir -p ~/.config/xdg-desktop-portal
+curl -Lo $HOME/.config/mimeapps.list https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/mango/.config/mimeapps.list
+curl -Lo $HOME/.config/mango/config.conf https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/mango/.config/mango/config.conf
+curl -Lo $HOME/.config/xdg-desktop-portal/mango-portals.conf https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/mango/.config/xdg-desktop-portal/mango-portals.conf
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Install ScopeBuddy"
+echo
+
 sudo wget -O /usr/local/bin/scopebuddy https://raw.githubusercontent.com/OpenGamingCollective/ScopeBuddy/refs/tags/1.5.0/bin/scopebuddy
 sudo chmod +x /usr/local/bin/scopebuddy
 sudo ln -s scopebuddy /usr/local/bin/scb
@@ -278,7 +259,7 @@ echo
 #---------------------------------------------------#
 
 echo
-echo "Install System Tools"
+echo "Install Optimsation Tools"
 echo
 
 PKGS=(
@@ -302,18 +283,18 @@ echo
 
 sudo mkdir /etc/systemd/system.conf.d
 sudo mkdir /etc/systemd/user.conf.d
-sudo wget -O /etc/sysctl.d/70-aleph-settings.conf https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/sysctl.d/70-aleph-settings.conf
-sudo wget -O /etc/sysctl.d/99-splitlock.conf https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/sysctl.d/99-splitlock.conf
-sudo wget -O /etc/systemd/zram-generator.conf https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/systemd/zram-generator.conf
-sudo wget -O /etc/udev/rules.d/30-zram.rules https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/rules.d/30-zram.rules
-sudo wget -O /etc/scx_loader.toml https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/scx_loader/scx_loader.toml
-sudo wget -O /etc/security/limits.conf https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/security/limits.conf
-sudo wget -O /etc/systemd/system.conf.d/10-limits.conf https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/systemd/system/10-limits.conf
-sudo wget -O /etc/systemd/user.conf.d/10-limits.conf https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/systemd/user/10-limits.conf
-sudo wget -O /etc/systemd/system.conf.d/00-timeout.conf https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/systemd/00-timeout.conf
-sudo wget -O /etc/systemd/user.conf.d/00-timeout.conf https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/systemd/00-timeout.conf
-sudo wget -O /usr/lib/modules-load.d/ntsync.conf https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/modules-load.d/ntsync.conf
-sudo wget -O /usr/lib/udev/rules.d/99-ntsync.rules https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/sys_cfgs/rules.d/99-ntsync.rules
+sudo wget -O /etc/sysctl.d/70-aleph-settings.conf https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/mango/sys_cfgs/sysctl.d/70-aleph-settings.conf
+sudo wget -O /etc/sysctl.d/99-splitlock.conf https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/mango/sys_cfgs/sysctl.d/99-splitlock.conf
+sudo wget -O /etc/systemd/zram-generator.conf https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/mango/sys_cfgs/systemd/zram-generator.conf
+sudo wget -O /etc/udev/rules.d/30-zram.rules https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/mango/sys_cfgs/rules.d/30-zram.rules
+sudo wget -O /etc/scx_loader.toml https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/mango/sys_cfgs/scx_loader/scx_loader.toml
+sudo wget -O /etc/security/limits.conf https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/mango/sys_cfgs/security/limits.conf
+sudo wget -O /etc/systemd/system.conf.d/10-limits.conf https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/mango/sys_cfgs/systemd/system/10-limits.conf
+sudo wget -O /etc/systemd/user.conf.d/10-limits.conf https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/mango/sys_cfgs/systemd/user/10-limits.conf
+sudo wget -O /etc/systemd/system.conf.d/00-timeout.conf https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/mango/sys_cfgs/systemd/00-timeout.conf
+sudo wget -O /etc/systemd/user.conf.d/00-timeout.conf https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/mango/sys_cfgs/systemd/00-timeout.conf
+sudo wget -O /usr/lib/modules-load.d/ntsync.conf https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/mango/sys_cfgs/modules-load.d/ntsync.conf
+sudo wget -O /usr/lib/udev/rules.d/99-ntsync.rules https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/mango/sys_cfgs/rules.d/99-ntsync.rules
 sudo sysctl --system
 sudo systemctl daemon-reload
 sudo systemctl start /dev/zram0
@@ -337,6 +318,16 @@ echo "Refresh Repos Again"
 echo
 
 sudo pacman -Syu --noconfirm
+
+echo
+echo "Done!"
+echo
+
+echo
+echo "Refresh AUR Again"
+echo
+
+yay -Syu
 
 echo
 echo "Done!"

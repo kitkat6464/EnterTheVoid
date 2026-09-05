@@ -1,2 +1,2 @@
-default_sched = "scx_lavd"
-default_mode = "Gaming"
+default_sched = "scx_pandemonium"
+# default_mode = "Gaming"

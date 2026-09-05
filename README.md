@@ -1,16 +1,25 @@
 <div align="center">
-Niri With Noctalia Set Up For EndeavourOS.
+Mango With Noctalia Set Up For EndeavourOS.
 </div>
 
 > [!IMPORTANT]
 > READ INSTALLER FILE TO SEE WHAT GETS INSTALLED. Fork This Repo and Remove Stuff You Don't Need Or If You Want To Add Something.
 
+
 _____________________________________________________________________________________________________________________
 
-## Step 1: Install Niri With Noctalia: (Run This If You Installed With No Desktop)
+## Step 0: Install Mango From The AUR (Run This If You Installed With No Desktop)
 
 ```shell
-curl -fsSL https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/Required-Setup | sh
+yay -S mangowm
+```
+
+_____________________________________________________________________________________________________________________
+
+## Step 1: Install Noctalia Along With Useful Apps:
+
+```shell
+curl -fsSL https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/mango/Required-Setup | sh
 ```
 
 _____________________________________________________________________________________________________________________
@@ -18,7 +27,7 @@ ________________________________________________________________________________
 ## Step 2: Setup VM Host Tools (OPTIONAL)
 
 ```shell
-curl -fsSL https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/niri/Optional-VM | sh
+curl -fsSL https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/mango/Optional-VM | sh
 ```
 _____________________________________________________________________________________________________________________
 
