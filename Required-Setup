@@ -229,6 +229,7 @@ echo
 echo "Set Default Configs"
 echo
 
+mkdir -p ~/.config/mango
 mkdir -p ~/.config/xdg-desktop-portal
 curl -Lo $HOME/.config/mimeapps.list https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/mango/.config/mimeapps.list
 curl -Lo $HOME/.config/mango/config.conf https://raw.githubusercontent.com/kitkat6464/MyConfigs/refs/heads/mango/.config/mango/config.conf
